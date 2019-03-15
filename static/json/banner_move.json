@@ -1,0 +1,37 @@
+[
+	{
+		"id":1,
+		"img":"img/banner1.jpg",
+		"bgcolor":"rgb(248,210,185)"
+		
+		
+	},
+	{
+		"id":2,
+		"img":"img/banner2.jpg",
+		"bgcolor":"rgb(250,108,61)"
+		
+		
+	},
+	{
+		"id":3,
+		"img":"img/banner3.jpg",
+		"bgcolor":"rgb(253,245,243)"
+		
+		
+	},
+	{
+		"id":4,
+		"img":"img/banner4.jpg",
+		"bgcolor":"rgb(124,140,16)"
+		
+		
+	},
+	{
+		"id":5,
+		"img":"img/banner5.jpg",
+		"bgcolor":"rgb(255,162,0)"
+		
+		
+	}
+]

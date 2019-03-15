@@ -1,0 +1,218 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'css/base.css' %}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'css/top_footer.css' %}"/>
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'css/register.css' %}"/>
+    <script src="{% static 'js/jquery-1.12.0.js' %}"></script>
+    <!--再导入cookie-->
+    <script src="{% static 'js/jquery.cookie.js' %}"></script>
+
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/swiper.min.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/register.js' %}"></script>
+</head>
+<body>
+
+<div id="header">
+    <!--top部分-->
+    <div class="top">
+        <div class="top_head">
+            <div class="top_l">华盛奥特莱斯全渠道一体化零售平台</div>
+            <div class="top_r">
+                <ul>
+                    <li class="top_login">
+                        <a href="{% url 'alg:login' %}"
+                           target="_blank">登录</a>
+                    </li>
+                    <li class="top_register">
+                        <a href="
+{% url 'alg:register' %}" target="_blank">免费注册</a>
+                    </li>
+                    <li class="top_mygo">
+                        <a href="{% url 'alg:index' %}">我的奥莱购</a>
+                        <dl class="mygo_down">
+                            <dd>
+                                <a href="#">我的订单</a>
+                            </dd>
+                            <dd>
+                                <a href="#">我的收藏</a>
+                            </dd>
+                            <dd>
+                                <a href="#">我的优惠卷</a>
+                            </dd>
+                            <dd>
+                                <a href="cart.html">我的购物车</a>
+                            </dd>
+                        </dl>
+
+                    </li>
+                    <li>
+                        <a target="_blank" href="#">手机APP</a>
+                    </li>
+                    <li class="help_center">
+                        <a href="#">帮助中心</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-----logo----->
+    <div class="head_blank">
+        <div class="head_msg">
+            <div class="logo_l">
+                <a href="{% url 'alg:index' %}" target="_blank">
+                    <img src="{% static 'img/logo_01.jpg' %}"/>
+                </a>
+                <a href="#">
+                    <img src="{% static 'img/ao-zc.jpg' %}"/>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!------------注册部分----------->
+<div id="welcome_register">
+    <div class="register_content">
+        <div class="register_content_l">
+            <a href="#" target="_blank">
+                <img src="{% static 'img/register_ad.png' %}"/>
+            </a>
+        </div>
+
+
+        <div class="register_content_r">
+
+            <form action="{% url 'alg:register' %}" method="post">
+                {% csrf_token %}
+                <div class="register_con_r_top">
+                    <span class="con_r_top_text1">华盛奥莱会员</span>
+                    <span class="con_r_top_text2"><a
+                            href="{% url 'alg:login' %}"
+                            target="_blank">已有账户，登录</a></span>
+                </div>
+
+                <!--注册账号-->
+                <div class="register_con_r_conter">
+                    <!--昵称-->
+                    <div class="name form-group
+                    has-feedback" id="name">
+                        <span>昵称</span>
+                        <input type="text"
+                               class="form-control name_input"
+                               id="name_text"
+                               placeholder="请输入3-10位昵称"
+                               name="name"/>
+                        <span class="glyphicon
+                        form-control-feedback"
+                              aria-hidden="true"></span>
+                    </div>
+
+
+                    <div class="register_con_phone form-group
+                    has-feedback" id="phone">
+                        <div class="input-group">
+                            <span>注册账号</span>
+                            <input type="text"
+                                   class="form-control phone_input"
+                                   id="userphone"
+                                   placeholder="请输入手机号码"
+                                   name="phone"
+                                   data-toggle="popover"
+                                   data-placement="bottom"
+                                   data-content="格式不正确"/>
+                        </div>
+                        <span class="glyphicon
+                        form-control-feedback"
+                              aria-hidden="true"></span>
+                    </div>
+
+
+                    <!--输入密码-->
+                    <div class="register_con_pwd form-group
+                    has-feedback" id="password-head">
+                        <span>输入密码</span>
+                        <input type="password" id="password"
+                               class="form-control password_input"
+                               placeholder="6~10位数密码"
+                               name="password"/>
+                        <span class="glyphicon form-control-feedback"
+                              aria-hidden="true"></span>
+                    </div>
+
+
+                    <!--确认密码-->
+                    <div class="register_con_sure form-group
+                    has-feedback" id="password-footer">
+                        <span>确认密码</span>
+                        <input class="sure_password_input form-control"
+                               type="password" id="sure_password"
+                               placeholder="请再次输入密码"/>
+                        <span class="glyphicon form-control-feedback"
+                              aria-hidden="true"></span>
+                    </div>
+
+
+                    <div class="register_con_testma">
+                        <ul>
+                            <li class="text_msg">验证码</li>
+                            <li>
+                                <input type="text" name="testma_text"
+                                       id="testma_text"
+                                       placeholder="请输入验证码"/>
+                            </li>
+                            <li class="ma"></li>
+                        </ul>
+                    </div>
+                    <!--确认密码提示框-->
+                    <div class="register_con_tips surepwd_error surepwd_pass"></div>
+
+
+                    <!--奥来购协议-->
+                    <div class="check_pro">
+                        <ul>
+                            <li class="text_msg"
+                                style="height: 25px;line-height: 25px;"></li>
+                            <li>
+                                <input type="checkbox"
+                                       name="remeberpro"
+                                       id="remeberpro"/>
+                                <a href="#">《奥莱购会员协议》</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </form>
+            <!--注册按钮-->
+            <div class="register">
+                <span></span>
+                <button id="subButton" class="register_btn">注册</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<!----------footer部分----------->
+<div id="footer">
+    <div class="foot_copyright">
+        Copyright © 2013-2016 深圳华盛电子商务有限公司 粤ICP备16081451-1号 All Right
+    </div>
+</div>
+</body>
+</html>

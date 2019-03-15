@@ -1,0 +1,374 @@
+ul,li,a,p{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	font-size: 12px;
+	color: #333;
+}
+.foot_copyright{
+	padding-bottom: 20px;
+}
+#welcome_register{
+	width:100%;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    margin-top: 20px;
+}
+.register_content{
+	width:1200px;
+	height: 540px;
+    margin: 0 auto;
+    padding: 30px 0px;
+    overflow: hidden;
+}
+.register_content_l{
+    float: left;
+    width: 660px;
+    height: 480px;
+}
+.register_content_l a img{
+	width:auto;
+	height: auto;
+	vertical-align: middle;
+	text-align: center;
+}
+.register_content_r{
+    float: right;
+    width: 350px;
+    border: 1px solid #d0d0d0;
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+.register_con_r_top{
+	background: #f5f5f5;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #f0f0f0;   
+    overflow: hidden;
+}
+
+.con_r_top_text1{
+	float: left;
+	color: #666;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 15px;
+}
+.con_r_top_text2{
+	float: right;
+	margin-right: 15px;
+}
+.con_r_top_text2 a{
+	color: #ff7800;
+	text-decoration: none;
+}
+.con_r_top_text2 a:hover{
+	color: #ff7800;
+	text-decoration: none;
+}
+
+.register_con_r_conter{
+    width: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+.name{
+	overflow: hidden;
+	width:300px;
+    height: 37px;
+}
+.name span{
+	float: left;
+	width: 55px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 12px;
+	text-align: right;
+    color: #666;
+}
+
+.name_input{
+	float: left;
+	margin-left: 5px;
+	line-height: 35px;
+}
+#name_text{
+    width: 180px;
+    height: 35px;
+    padding-left: 10px;
+    line-height: 35px;
+    background: #fcfcfc;
+    color: #666;
+    border: 1px solid #e6e6e6;
+    padding-right: 45px;
+    background: url(../img/zc.jpg) no-repeat right center;
+
+}
+
+
+
+
+/*注册帐号*/
+.register_con_phone{
+	overflow: hidden;
+	width:300px;
+    height: 37px;
+}
+.register_con_phone span{
+	float: left;
+	width: 55px;
+	height: 35px;
+	line-height: 35px;
+	font-size: 12px;
+	text-align: right;
+    color: #666;
+}
+
+.phone_input{
+	float: left;
+	margin-left: 5px;
+	line-height: 35px;
+}
+#userphone{
+    width: 180px;
+    height: 35px;
+    padding-left: 10px;
+    line-height: 35px;
+    background: #fcfcfc;
+    color: #666;
+    border: 1px solid #e6e6e6;
+    padding-right: 45px;
+    background: url(../img/zc.jpg) no-repeat right center;
+    
+}
+/*提示框*/
+.register_con_tips{
+	overflow: hidden;
+    margin-left: 5px;
+    color: #38c352;
+    width:300px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 60px;
+}
+.phone_error{
+    color: #ff3344;
+}
+.phone_pass{
+	color: #38c352;
+}
+/*密码*/
+.register_con_pwd{
+	width:300px;
+    overflow: hidden;
+    height: 37px;
+}
+.register_con_pwd span{
+	float: left;
+    width: 55px;
+    text-align: right;
+    color: #666;
+    height: 35px;
+    line-height: 35px;
+}
+.password_input{
+	float: left;
+	margin-left: 5px;
+}
+#password{
+	width: 180px;
+    height: 35px;
+    padding-left:10px;
+    line-height: 35px;
+    background: #fcfcfc;
+    color: #666;
+    border: 1px solid #e6e6e6;
+    padding-right: 45px;
+    background: url(../img/my.jpg) no-repeat right center;
+}
+.password_error{
+	color: #ff3344;
+}
+.password_pass{
+	color: #38c352;
+}
+/*确认密码*/
+.register_con_sure{
+	width:300px;
+    overflow: hidden;
+    height: 37px;
+}
+.register_con_sure span{
+	float: left;
+    width: 55px;
+    text-align: right;
+    color: #666;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+}
+.sure_password_input{
+	float: left;
+	margin-left: 5px;
+}
+#sure_password{
+	width: 180px;
+    height: 35px;
+    padding-left:10px;
+    line-height: 35px;
+    background: #fcfcfc;
+    color: #666;
+    border: 1px solid #e6e6e6;
+    padding-right: 45px;
+    background: url(../img/my.jpg) no-repeat right center;
+}
+
+.register_con_testma{
+	overflow: hidden;
+    height: 37px;
+    width:300px;
+}
+.register_con_testma ul li{
+	float: left;  
+    height: 35px;
+    line-height: 35px;
+    
+}
+.text_msg{
+	width: 55px;
+    text-align: right;
+    color: #666;
+    font-size: 12px;
+}
+#testma_text{
+    width: 130px;
+    background: #fcfcfc;
+    height: 35px;
+    border: 1px solid #e6e6e6;
+    color: #666;
+    padding: 0px 5px;
+    line-height: 35px;
+    margin-left: 5px;
+}
+.ma{
+	width:64px;
+	height: 30px;
+	background:skyblue;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	text-align: center;
+	font-size: 15px;
+	cursor: pointer;
+}
+.surepwd_error{
+	color: #ff3344;
+}
+.surepwd_pass{
+	color: #38c352;
+}
+
+/*短信验证*/
+.shortmsg{
+    overflow: hidden;
+    height: 37px;
+    width: 300px;
+}
+.shortmsg ul li{
+	float: left;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+}
+
+#testma_text{
+	margin-left: 5px;
+	width: 130px;
+    background: #fcfcfc;
+    height: 35px;
+    border: 1px solid #e6e6e6;
+    color: #666;
+    padding: 0px 5px;
+    line-height: 35px;
+}
+.getma{
+    width: 90px;
+    height: 25px;
+    line-height: 25px;
+    border: 0px solid #eaeaea;
+    float: right;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+    background: #eaeaea;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.check_pro{
+	width:300px;
+	height: 25px;
+	overflow: hidden;
+}
+.check_pro ul li{
+	float: left;
+	height: 25px;
+	line-height: 25px;
+    text-align: right;
+    color: #666;
+   
+}
+#remeberpro{
+    margin-left: 5px;
+}
+#remeberpro a{
+	width:180px;
+	height: 25px;
+	color: #666;
+}
+#remeberpro a:hover{
+	color: #666;
+	text-decoration: none;
+}
+
+.register{
+	width: 300px;
+	height: 40px;
+	overflow: hidden; 
+}
+.register span{
+    float: left;
+    width: 55px;
+    text-align: right;
+    color: #666;
+    height: 30px;
+}
+.register_btn{
+    margin-left: 5px;
+    float: left;
+    width:175px;
+    height: 40px;
+    color: #fff;
+    background: #ff3344;
+  
+}
+.register_btn a{
+    width: 175px;
+    height: 40px;  
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 2px;
+    display: block;
+    background: #ff3344;
+    border-radius:5px;
+}
+.register_btn a:hover{
+	color: #fff;
+	text-decoration: none;
+	background: #f70b09;
+}

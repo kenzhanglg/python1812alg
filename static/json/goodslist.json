@@ -1,0 +1,339 @@
+[
+	{
+		"id": 1,
+		"goodsImg": [
+			{
+				"xxsrc": "imgs/goodslist_001.JPG",
+				"smallsrc": "imgs/small_goods_001.JPG",
+				"bigsrc": "imgs/big_goods_001.JPG"
+			}, {
+
+				"xxsrc": "imgs/goodslist_002.JPG",
+				"smallsrc": "imgs/small_goods_002.JPG",
+				"bigsrc": "imgs/big_goods_002.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_003.JPG",
+				"smallsrc": "imgs/small_goods_003.JPG",
+				"bigsrc": "imgs/big_goods_003.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_004.JPG",
+				"smallsrc": "imgs/small_goods_004.JPG",
+				"bigsrc": "imgs/big_goods_004.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_005.JPG",
+				"smallsrc": "imgs/small_goods_005.JPG",
+				"bigsrc": "imgs/big_goods_005.JPG"
+			}
+		],
+		"title": [
+			{	"src":"imgs/brand_logo00.jpg",
+				"coversrc":"imgs/goods27.jpg",
+				"type": "Versace Collection 范思哲 秋冬新品男款套头毛衫V700629 VK00154 V7023",
+				"salemsg": "以优惠价1999.00购买",
+				"nowprice": "¥1999.00",
+				"delprice": "¥4300.00",
+				"remnum":1,
+				"num":1
+			}
+		]
+	}, {
+		"id": 2,
+		"goodsImg": [
+			{	
+				"xxsrc": "imgs/goodslist_011.JPG",
+				"smallsrc": "imgs/small_goods_011.JPG",
+				"bigsrc": "imgs/big_goods_011.JPG"
+			}, {
+
+				"xxsrc": "imgs/goodslist_012.JPG",
+				"smallsrc": "imgs/small_goods_012.JPG",
+				"bigsrc": "imgs/big_goods_012.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_013.JPG",
+				"smallsrc": "imgs/small_goods_013.JPG",
+				"bigsrc": "imgs/big_goods_013.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_014.JPG",
+				"smallsrc": "imgs/small_goods_014.JPG",
+				"bigsrc": "imgs/big_goods_014.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_015.JPG",
+				"smallsrc": "imgs/small_goods_015.JPG",
+				"bigsrc": "imgs/big_goods_015.JPG"
+			}
+		],
+		"title": [
+			{	"src":"imgs/brand_logo01.jpg",
+				"coversrc":"imgs/saleprice_goods1.jpg",
+				"type": "U.S POLO ASSN. 女士时尚休闲长T恤衫 T111001",
+				"hour":10,
+				"min":20,
+				"second":45,
+				"news": "国庆“价”到 限时抢购 （U.S POLO 全场1.5折）此商品正参加满299减100元活动！",
+				"nowprice": "¥115.20",
+				"delprice": "¥768",
+				"salemsg": "已享受1.50折优惠满299.00元减100.00",
+				"remnum":2,
+				"num":1
+			}
+		]
+	}, {
+		"id": 3,
+		"goodsImg": [
+			{
+				"xxsrc": "imgs/goodslist_021.JPG",
+				"smallsrc": "imgs/small_goods_021.JPG",
+				"bigsrc": "imgs/big_goods_021.JPG"
+			}, {
+
+				"xxsrc": "imgs/goodslist_022.JPG",
+				"smallsrc": "imgs/small_goods_022.JPG",
+				"bigsrc": "imgs/big_goods_022.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_023.JPG",
+				"smallsrc": "imgs/small_goods_023.JPG",
+				"bigsrc": "imgs/big_goods_023.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_024.JPG",
+				"smallsrc": "imgs/small_goods_024.JPG",
+				"bigsrc": "imgs/big_goods_024.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_025.JPG",
+				"smallsrc": "imgs/small_goods_025.JPG",
+				"bigsrc": "imgs/big_goods_025.JPG"
+			}
+		],
+		"title": [
+			{	"src":"imgs/brand_logo02.jpg",
+				"coversrc":"imgs/saleprice_goods2.jpg",
+				"type": "PUMA/彪马 女式针织外套 83602821",
+				"news": "今日特价 限时抢购此商品正参加满299减100元活动！",
+				"hour":10,
+				"min":20,
+				"second":45,
+				"nowprice": "¥239.00",
+				"delprice": "¥399",
+				"salemsg": "以优惠价239.00元购买00",
+				"remnum":3,
+				"num":1
+				
+			}
+		]
+	}, {
+		"id": 4,
+		"goodsImg": [
+			{
+				"xxsrc": "imgs/goodslist_031.JPG",
+				"smallsrc": "imgs/small_goods_031.JPG",
+				"bigsrc": "imgs/big_goods_031.JPG"
+			}, {
+
+				"xxsrc": "imgs/goodslist_032.JPG",
+				"smallsrc": "imgs/small_goods_032.JPG",
+				"bigsrc": "imgs/big_goods_032.JPG"
+			}
+		],
+		"title": [
+			{	"src":"imgs/brand_logo03.jpg",
+				"coversrc":"imgs/saleprice_goods3.jpg",
+				"type": "Moschino 莫斯奇诺 女款针织套头衫W629201 E1691 C74",
+				"news": "今日特价 限时抢购",
+				"nowprice": "¥899.00 ",
+				"delprice": "¥1850",
+				"salemsg": "以优惠价899.00元购买",
+				"remnum":2,
+				"num":1
+			}
+		]
+	}, {
+		"id": 5,
+		"goodsImg": [
+			{
+				"xxsrc": "imgs/goodslist_041.JPG",
+				"smallsrc": "imgs/small_goods_041.JPG",
+				"bigsrc": "imgs/big_goods_041.JPG"
+			}, {
+
+				"xxsrc": "imgs/goodslist_042.JPG",
+				"smallsrc": "imgs/small_goods_042.JPG",
+				"bigsrc": "imgs/big_goods_042.JPG"
+			}
+		],
+		"title": [
+			{
+				"src":"imgs/brand_logo04.jpg",
+				"coversrc":"imgs/saleprice_goods4.jpg",
+				"type": "欧莎 男士时尚长袖T恤 S216C111391",
+				"news": "今日特价 限时抢购",
+				"hour":10,
+				"min":20,
+				"second":45,
+				"nowprice": "¥189.00",
+				"delprice": "¥588",
+				"salemsg": "以优惠价189.00元购买",
+				"remnum":1,
+				"num":1
+			}
+		]
+	}, {
+		"id": 6,
+		"goodsImg": [
+			{
+				"xxsrc": "imgs/goodslist_051.JPG",
+				"smallsrc": "imgs/small_goods_051.JPG",
+				"bigsrc": "imgs/big_goods_051.JPG"
+			}, {
+
+				"xxsrc": "imgs/goodslist_052.JPG",
+				"smallsrc": "imgs/small_goods_052.JPG",
+				"bigsrc": "imgs/big_goods_012.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_053.JPG",
+				"smallsrc": "imgs/small_goods_053.JPG",
+				"bigsrc": "imgs/big_goods_053.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_054.JPG",
+				"smallsrc": "imgs/small_goods_054.JPG",
+				"bigsrc": "imgs/big_goods_054.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_055.JPG",
+				"smallsrc": "imgs/small_goods_055.JPG",
+				"bigsrc": "imgs/big_goods_055.JPG"
+			}
+		],
+		"title": [
+			{
+				"src":"imgs/brand_logo05.jpg",
+				"coversrc":"imgs/saleprice_goods5.jpg",
+				"type": "杰米熊 男小童茄克 873520505",
+				"hour":10,
+				"min":20,
+				"second":45,
+				"nowprice": "¥103.20",
+				"delprice": "¥299.00",
+				"salemsg": "已享受8.00折优惠满199.00元减50.00",
+				"remnum":5,
+				"num":1
+			}
+		]
+	}, {
+		"id": 7,
+		"goodsImg": [
+			{
+				"xxsrc": "imgs/goodslist_061.JPG",
+				"smallsrc": "imgs/small_goods_061.JPG",
+				"bigsrc": "imgs/big_goods_061.JPG"
+			}, {
+
+				"xxsrc": "imgs/goodslist_062.JPG",
+				"smallsrc": "imgs/small_goods_062.JPG",
+				"bigsrc": "imgs/big_goods_062.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_063.JPG",
+				"smallsrc": "imgs/small_goods_063.JPG",
+				"bigsrc": "imgs/big_goods_063.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_064.JPG",
+				"smallsrc": "imgs/small_goods_064.JPG",
+				"bigsrc": "imgs/big_goods_064.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_065.JPG",
+				"smallsrc": "imgs/small_goods_065.JPG",
+				"bigsrc": "imgs/big_goods_065.JPG"
+			}
+		],
+		"title": [
+			{	
+				"src":"imgs/ptnew.jpg",
+				"coversrc":"imgs/goods86.jpg",
+				"type": "小老板 海鲜味紫菜 36g",
+				"nowprice": "¥7.50 ",
+				"delprice": "¥17.64",
+				"salemsg": "已直降7.20元满159.00元减30.00",
+				"snum": 2,
+				"num":1
+			}
+		]
+	}, {
+		"id": 8,
+		"goodsImg": [
+			{
+				"xxsrc": "imgs/goodslist_071.JPG",
+				"smallsrc": "imgs/small_goods_071.JPG",
+				"bigsrc": "imgs/big_goods_071.JPG"
+			}, {
+
+				"xxsrc": "imgs/goodslist_072.JPG",
+				"smallsrc": "imgs/small_goods_072.JPG",
+				"bigsrc": "imgs/big_goods_072.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_073.JPG",
+				"smallsrc": "imgs/small_goods_073.JPG",
+				"bigsrc": "imgs/big_goods_073.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_074.JPG",
+				"smallsrc": "imgs/small_goods_074.JPG",
+				"bigsrc": "imgs/big_goods_074.JPG"
+			}, {
+				"xxsrc": "imgs/goodslist_075.JPG",
+				"smallsrc": "imgs/small_goods_075.JPG",
+				"bigsrc": "imgs/big_goods_075.JPG"
+			}
+		],
+		"title": [
+			{	
+				"src":"imgs/ptnew.jpg",
+				"coversrc":"imgs/goods87.jpg",
+				"type": "花王 妙而舒婴儿纸尿布 中号（M)64片",
+				"nowprice": "¥138.00",
+				"delprice": "¥188.00",
+				"salemsg": "已直降27.00元满159.00元减30.00",
+				"snum": 2,
+				"num": 1
+			}
+		]
+	}, {
+		"id": 9,
+		"goodsImg": [
+			{	
+				"xxsrc": "imgs/goodslist_081.JPG",
+				"smallsrc": "imgs/small_goods_081.JPG",
+				"bigsrc": "imgs/big_goods_081.JPG"
+			}
+		],
+		"title": [
+			{	
+				"src":"imgs/ptnew.jpg",
+				"coversrc":"imgs/goods88.jpg",
+				"type": "J.ONE 河智苑果冻紧致气垫粉15g+15g",
+				"nowprice": "¥98.00",
+				"delprice": "¥162.00",
+				"salemsg": "已直降7.20元满159.00元减30.00",
+				"snum":2,
+				"num": 1
+			}
+		]
+	},
+	{
+		"id": 10,
+		"goodsImg": [
+			{	
+				"xxsrc": "imgs/goodslist_081.JPG",
+				"smallsrc": "imgs/small_goods_081.JPG",
+				"bigsrc": "imgs/big_goods_081.JPG"
+			}
+		],
+		"title": [
+			{	
+				"src":"imgs/ptnew.jpg",
+				"coversrc":"imgs/goods89.jpg",
+				"type": "J.ONE 河智苑果冻紧致气垫粉15g+15g",
+				"nowprice": "¥98.00",
+				"delprice": "¥162.00",
+				"salemsg": "已直降7.20元满159.00元减30.00",
+				"snum":2,
+				"num": 1
+			}
+		]
+	}
+]

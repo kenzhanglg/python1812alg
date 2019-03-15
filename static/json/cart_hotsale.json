@@ -1,0 +1,38 @@
+[
+	{
+		"id":1,
+		"src":"img/cart_hot1.jpg",
+		"type":"OTHERMIX七格格 秋新款纯色圆领甜美灯笼袖短裙收腰显瘦连衣裙 6MB3037N",
+		"nowprice":"¥249.90",
+		"delprice":"¥1009.00"
+	},
+	{
+		"id":2,
+		"src":"img/cart_hot2.jpg",
+		"type":"歌莉娅 时尚韩版单肩斜挎包 A2G1601475",
+		"nowprice":"¥219.0090",
+		"delprice":"¥1080.00"
+	},
+	{
+		"id":3,
+		"src":"img/cart_hot3.jpg",
+		"type":"古奇天伦 纯色系带女低帮休闲鞋 8443N",
+		"nowprice":"¥228.00",
+		"delprice":"¥498.00"
+	},
+	{
+		"id":4,
+		"src":"img/cart_hot4.jpg",
+		"type":"Kiehl's/科颜氏 牛油果保湿眼霜",
+		"nowprice":"¥270.00",
+		"delprice":"¥300.00"
+	},
+	{
+		"id":5,
+		"src":"img/cart_hot5.jpg",
+		"type":"VDL 贝壳提亮液妆前乳30mlN",
+		"nowprice":"¥108.00",
+		"delprice":"¥142.00"
+	}
+	
+]

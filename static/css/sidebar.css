@@ -1,0 +1,547 @@
+
+/*侧边栏*/
+#sidebar{
+	width: 310px;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99;
+    font-family: "Microsoft YaHei";
+    background: #393939;
+    margin-right: -270px;
+    z-index: 999;
+}
+/*点击小图标 侧边栏显示right 270px*/
+
+.sidebar_nav{
+	width: 40px;
+    position: relative;
+    z-index: 99;
+    height: 100%;
+    background-color: #262626;
+}
+.sidebar_nav_msg{
+	height: 100%;
+	margin-top: -300px;
+    position: absolute;
+    top: 300px;
+    right: 0;
+    
+}
+.sidebar_nav_msg ul{
+	width:40px;
+	height: 435px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.sidebar_nav_msg ul li{
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    background: #262626;
+}
+.sidebar_logo{
+    position: relative;
+    width:40px;
+    height: 30px;
+}
+.sidebar_logo a{
+	text-decoration: none;
+    color: #333;
+    outline: none;
+    width:40px;
+    height: 35px;
+}
+.logo_icon{
+	height: 30px;
+    text-indent: -999em;	
+    background: url(../img/ico1.png) no-repeat -462px -5px;;    
+}
+.logo_tip{
+	width: 80px;
+    position: absolute;
+    top: 0px;
+    right: 40px;
+    background: #ffffff;
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    color: #666;
+    text-align: center;
+    display: none;
+}
+.tip_red{
+    border-color: transparent #c40000 transparent transparent;
+    border-style: solid;
+    border-width: 7px;
+    height: 0px;
+    position: absolute;
+    width: 0px;
+    right: -1px;
+    top: 8px;
+}
+.logo_icon,.twoma_icon,.cart_bar_icon,.chip_icon,.back_icon,.close_icon{
+	width: 40px;
+	position: relative;	    
+    display: block;
+    margin-top: 5px;
+}
+.sidebar_ad{
+	width:40px;
+	height: 150px;	
+}
+.sidebar_twoma{
+	width:40px;
+	height: 45px;
+	position: relative;
+}
+.sidebar_twoma:hover{
+	cursor: pointer;
+	background: #c40000;
+}
+.twoma_icon{
+	height: 45px;	
+    background: url(../img/ico1.png) no-repeat -462px -184px;;    
+}
+
+.two_tip{
+	position: absolute;
+    top: 0px;
+    right: 40px;
+    background: #ffffff;
+    width: 80px;
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    color: #666;
+    text-align: center;
+    display: none;
+}
+.two_tip a{
+	color: #666;
+	text-decoration: none;
+}
+.two_tip a:hover{
+	color: #666;
+	text-decoration: none;
+}
+.sidebar_cart{
+	width:40px;
+	height: 125px;
+	position: relative;
+}
+.sidebar_cart:hover{
+	cursor: pointer;
+	background: #c40000;
+}
+.cart_bar{
+	height: 125px;
+    cursor: pointer;
+}
+.cart_bar_icon{
+	background: url(../img/ico1.png) no-repeat -465px -40px;
+    margin: 2px auto 0;
+    width: 40px;
+    height: 36px;
+}
+.cart_bar a{
+	text-decoration: none;
+    color: #333;
+    outline: none;
+}
+.cart_bar a:hover{
+	text-decoration: none;
+}
+.cart_bar a p{
+    margin: 0 auto;
+    width: 14px;
+    line-height: 18px;
+    font-size: 14px;
+    color: #fff;
+}
+.cart_bar_num{
+    margin: 5px auto;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #40190c;
+    background: #fee159;
+    border-radius: 25px;
+    display: block;
+
+}
+
+.sidebar_chip{
+	width:40px;
+	height: 45px;
+	position: relative;
+}
+.sidebar_chip:hover{
+	background: #c40000;
+	
+}
+.chip_icon{
+	background: url(../img/ico1.png) no-repeat -461px -220px;
+    height: 45px;
+}
+.chip_tip{
+	position: absolute;
+    top: 0px;
+    right: 40px;
+    background: #ffffff;
+    width: 80px;
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    color: #666;
+    text-align: center;
+    display: none;
+}
+.chip_tip a{
+	text-decoration: none;
+    color: #333;
+    outline: none;
+}
+.chip_tip a:hover{
+	text-decoration: none;
+}
+.sidebar_chat{
+	width:40px;
+	height: 40px;
+	position: relative;
+	background: #c40000;
+}
+.sidebar_chat1{
+	color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    background: #c40000;
+}
+.sidebar_chat2{
+    position: absolute;
+    bottom: 80px;
+    right: 0px;
+    background: #c40000;
+}
+.sidebar_chat a img{
+    margin-top: 4px;
+}
+.chat_tip{
+    position: absolute;
+    top: 0px;
+    right: 40px;
+    background: #ffffff;
+    width: 80px;
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    color: #666;
+    text-align: center;
+    display: none;
+}
+.chat_tip a{
+	height: 23px;
+    text-decoration: none;
+    color: #333;
+    outline: none
+}
+.chat_tip a:hover{
+	text-decoration: none;
+	color: green;
+}
+.chat_tip a span{
+	color: green;
+}
+.back_top{
+	width:40px;
+	height:35px;
+	position: relative;
+}
+.back_top1{
+	position: absolute;
+    bottom: 50px;
+    right: 0px;
+}
+.back_top:hover{
+	background:#c40000;
+}
+.back_top a .back_icon{
+	background: url(../img/ico1.png) no-repeat -461px -260px;
+    height: 30px;
+}
+.close_sidebar{
+	width:40px;
+	height:35px;
+	position: relative;
+}
+.close_sidebar1{
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+}
+.close_sidebar a{
+	width:40px;
+	height:35px;
+	text-decoration: none;
+    color: #333;
+    outline: none
+}
+.close_sidebar:hover{
+	background:#c40000;
+}
+.close_icon{
+	background: url(../img/ico1.png) no-repeat -461px -286px;
+    height: 30px;
+}
+
+
+/*登录注册*/
+.sidebar_login{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    width: 270px;
+    height: 100%;
+    color: #fff;
+    display: block;
+}
+.sidebar_login_msg{
+	width:270px;
+	height: 365px;
+}
+.sidebar_login_msg ul{
+	width:270px;
+	height: 365px;
+	list-style: none;
+}
+.sidebar_login_msg ul li{
+	width: 270px;
+    text-align: center;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.msg_tip{
+	
+}
+
+
+.sidebar_login_tip{
+	width:270px;
+	height: 18px;
+	line-height: 18px;
+	color: #fff;
+	font-size: 12px;
+}
+#side_loginname{
+    background: url(../img/xb-zh.jpg) no-repeat left center;   
+    background-color: #fff;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 0px 0px 40px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 0px #EAEAEA inset; /*盒子阴影*/
+    vertical-align: middle;
+}
+#side_loginpwd{
+    background: url(../img/xb-mm.jpg) no-repeat left center;
+    background-color: #fff;
+	width: 150px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 0px 0px 40px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 0px #EAEAEA inset;
+    vertical-align: middle;
+}
+#side_test{
+	width:115px;
+	background-image: none;
+	border-radius: 5px;
+}
+.ce_test{
+    border: 1px solid #ddd;
+    height: 23px;
+    margin-right: 2px;
+}
+#img_ma{
+	width:auto;
+	height: auto;
+	vertical-align: middle;
+}
+#side_login_btn{
+    background: none repeat scroll 0% 0% #d61917;
+    width: 190px;
+    height: 35px;  
+    line-height: 21px;
+    text-align: center;
+    border: medium none;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.login_test_tips{
+    width: 180px;
+    padding-left: 40px;
+	text-align: center;
+
+}
+.login_test_tips span{
+	font-size: 12px;
+	font-style: normal;
+	color: #FFF;
+}
+
+/*.login_pwd_tips{
+    height: 35px;
+    width: 190px;
+    margin-left: 40px
+}*/
+.forget{
+	display: block;
+	float: left;
+	height: 18px;
+	line-height: 18px;
+	color: #fff;
+	font-size: 12px;
+	font-family: "微软雅黑";
+	
+}
+.forget a,.now-in a{
+    text-decoration: none;
+    color: #fff;
+}
+.forget a:hover{
+	text-decoration: none;
+    color: #fff;
+}
+.now-in a:hover{
+	text-decoration: none;
+    color: #fff;
+}
+.now-in{
+	display: block;
+	height: 18px;
+	float: right;
+	line-height: 18px;
+	color: #fff;
+	font-size: 12px;
+	font-family: "微软雅黑";
+
+}
+
+/*已登录*/
+.person_center{
+	display: none;
+}
+.person_center_msg{
+    width: 209px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.personal_goods{
+    width: 99px;
+    height: 90px;
+    border: 1px solid #eee;
+    float: left;
+    background: #f8f8f8;
+    border-radius: 2px;
+    color: #666;
+    position: relative;
+    cursor: pointer;
+}
+.personal_goods_icon{
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin: 0 auto;
+    background-position: -6px -495px;
+    margin-top: 25px;
+}
+.goods_status{
+	font-size: 12px;
+	color: #666;
+	line-height: 25px;
+}
+.wait{
+    width: 16px;
+    height: 17px;
+    background: #d61917;
+    position: absolute;
+    top: 15px;
+    left: 68px;
+    color: #fff;
+    line-height: 16px;
+    border-radius: 10px;
+}
+
+/*广告*/
+.sidebar_ad_tu{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    width: 270px;
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    display: none;
+}
+.ad_tu{
+    color: #fff;
+    text-align: center;
+    display: block;
+}
+.ad_tu a{
+    text-decoration: none;
+    color: #333;
+    outline: none;
+}
+.ad_tu img{
+	width:100%;
+	height: 100%;
+	border:0;
+	vertical-align: middle;
+}
+/*二维码*/
+.sidebar_twoma_tu{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    width: 270px;
+    height: 100%;
+    color: #fff;
+    font-family: "微软雅黑";
+	display: none;
+}
+.two_tu{
+	color: #fff;
+}
+.two_tu ul li{
+	width: 270px;
+    text-align: center;
+    margin-top: 15px;
+    overflow: hidden;
+}
+.twoma_tu_title{
+    text-align: left;
+    line-height: 35px;
+    height: 35px;
+    background: #2d2d2d;
+    font-weight: bold;
+    margin-top: 0px;
+}
+.twoma_tu img{
+	width:100%;
+	height: 100%;
+	border:0;
+	vertical-align: middle;
+}
