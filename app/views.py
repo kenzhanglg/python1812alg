@@ -5,25 +5,24 @@ import time
 from django.core.cache import cache
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
-
-# Create your views here.
-from app.models import Wheel, Sale_goods, New_goods, User
+from app.models import Wheel,New_goods, User, Goods, Cart
 
 
 def index(request):
     wheels = Wheel.objects.all()
-    sale_goods = Sale_goods.objects.all()
     new_goods  = New_goods.objects.all()
+    goods = Goods.objects.all()
 
     response_data = {
         'wheels':wheels,
-        'sale_goods':sale_goods,
         'new_goods':new_goods,
-        'user': None
+        'user': None,
+        'goods':goods,
     }
 
     token = request.session.get('token')
     userid = cache.get(token)
+    print(userid)
     if userid:
         user = User.objects.get(pk=userid)
         response_data['user'] = user
@@ -43,6 +42,8 @@ def login(request):
             if user.password == password:    # 验证通过
                 # 更新token
                 token = generate_token()
+                print(token)
+                print(user.id)
                 # 状态保持
                 cache.set(token, user.id, 60*60*24*3)
                 # 传递客户端
@@ -109,9 +110,92 @@ def checkphone(request):
     return JsonResponse(response_data)
 
 
-def goodslist(request):
-    return render(request,'goodslist.html')
+def goodslist(request,dealerid):
+
+    goods = Goods.objects.filter(dealerid=dealerid)
+
+    response_data = {
+        'goods':goods,
+        'user':None
+    }
+    # 获取购物车信息
+    token = request.session.get('token')
+    userid = cache.get(token)
+
+    if userid:
+        user = User.objects.get(pk=userid)
+        carts = user.cart_set.all()
+        response_data['carts'] = carts
+        response_data['user'] = user
+    return render(request,'goodslist.html',context=response_data)
 
 
 def cart(request):
-    return render(request,'cart.html')
+
+    response_data = {
+        'iscart':None
+    }
+    token = request.session.get('token')
+    userid = cache.get(token)
+
+    if userid:
+        user = User.objects.get(pk=userid)
+        carts = user.cart_set.all()
+        response_data['carts'] = carts
+        response_data['user'] = user
+        if carts.exists():
+            iscart = True
+        else:
+            iscart = False
+        response_data['iscart'] = iscart
+
+    return render(request,'cart.html',context=response_data)
+
+
+def addtocart(request):
+    # 获取token
+    token = request.session.get('token')
+    print(token)
+    # 响应数据
+    response_data = {}
+    # 缓存
+    if token:
+        userid = cache.get(token)
+        if userid:  # 已经登录
+            user = User.objects.get(pk=userid)
+            goodsid = request.GET.get('goodid')
+            color = request.GET.get('color')
+            size = request.GET.get('size')
+            number = request.GET.get('number')
+            goods = Goods.objects.get(pk=goodsid)
+            carts = Cart.objects.filter(user=user).filter(goods=goods)
+            if carts.exists():
+                carts1 = carts.filter(color=color ).filter(size=size)
+                if carts1.exists():
+                    cart = carts1.first()
+                    cart.number = int(number) + cart.number
+                    cart.save()
+                else:
+                    cart = Cart()
+                    cart.goods = goods
+                    cart.number = number
+                    cart.size = size
+                    cart.color = color
+                    cart.save()
+
+            else:
+                cart = Cart()
+                cart.goods = goods
+                cart.number = number
+                cart.size = size
+                cart.color = color
+                cart.save()
+            response_data['status'] = 1
+            response_data['msg'] = '添加 {} 购物车成功: {}'
+
+            return  JsonResponse(response_data)
+
+    response_data['status'] = -1
+    response_data['msg'] = '请登录后操作'
+
+    return JsonResponse(response_data)

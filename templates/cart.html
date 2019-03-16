@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <title>购物车</title>
     <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'css/base.css' %}"/>
+    <link rel="stylesheet" type="text/css" href=
+            "{% static 'css/base.css' %}"/>
     <link rel="stylesheet" type="text/css"
           href="{% static 'css/top_footer.css' %}"/>
     <link rel="stylesheet" type="text/css"
@@ -17,7 +17,7 @@
     <script src="{% static 'js/swiper.min.js' %}"></script>
     <script src="{% static 'js/index.js' %}"></script>
     <script src="{% static 'js/cart.js' %}"></script>
-{#    <script src="{% static 'js/jiao.js' %}"></script>#}
+    {#    <script src="{% static 'js/jiao.js' %}"></script>#}
 </head>
 
 <body>
@@ -30,7 +30,12 @@
             <div class="top_r">
                 <ul>
                     <li class="top_login">
-                        <a href="{% url 'alg:login' %}" target="_blank">登录</a>
+                        <a href="{% url 'alg:login' %}">
+                            用户：{{ user.name | default:'未登录' }}
+                        </a>
+                        {% if user %}
+                            <a href="{% url 'alg:logout' %}">退出登录</a>
+                        {% endif %}
                     </li>
                     <li class="top_register">
                         <a href="{% url 'alg:register' %}"
@@ -110,23 +115,28 @@
         <img src="{% static 'img/alg-lodding.gif' %}">
     </div>
 </div>
+
 <!--------购物车详情---------->
 <div class="cart_msg">
-    <div class="cart_title">
-        <p>购物车</p>
-    </div>
-    <div class="cart_msg_content">
-        <!--没有商品-->
-        <div class="cart_msg_empty">
-            <img src="{% static 'img/car-b.png' %}">
-            <span> 购物车内暂时没有商品，去
-                <a href="{% url 'alg:index'  %}  "
+    {% if not iscart %}
+
+        <div class="cart_title">
+            <p>购物车</p>
+        </div>
+        <div class="cart_msg_content">
+            <!--没有商品-->
+            <div class="cart_msg_empty">
+                <img src="{% static 'img/car-b.png' %}">
+                <span> 购物车内暂时没有商品，去
+                <a href="{% url 'alg:index' %}  "
                    target="_blank">
                     首页
                 </a>挑选喜欢的商品 </span>
+            </div>
         </div>
-    </div>
-</div>
+        </div>
+    {% endif %}
+
 <div class="cart_msg">
     <div class="cartlist_table">
         <ul class="cartlist_tittle">
@@ -138,40 +148,64 @@
             <li style="width:118px;">小计</li>
             <li style="width:118px;">操作</li>
         </ul>
-        <!--<ul class="cartlist_info table_msg">
-            <li class="cartlist_info_choose table_data"><input type="checkbox"/></li>
-            <li class="cartlist_info_goods table_data">
+    <div>
+        {% for cart in carts %}
+        <ul class="cartlist_info table_msg">
 
-                <div class="order_gooods">
-                    <div class="cartlist_goods_tu"><a><img/></a></div>
-                    <div class="cartlist_goods_type">
-                        <div class="cartlist_goods_msg">
-                            <a class="goods_type_title"><i class='type_icon'></i>title</a>
+
+                <li class="cartlist_info_choose table_data"><input
+                        type="checkbox"/></li>
+                <li class="cartlist_info_goods table_data">
+
+                    <div class="order_gooods">
+                        <div class="cartlist_goods_tu">
+                            <a>
+                                <img src="{{ cart.goods.xxsrc1 }}" alt="">
+                            </a>
                         </div>
-                        <div class="goods_types">
-                            <span class="goods_types_size">S</span>
-                            <span class="goods_types_color">蓝色</span>
+                        <div class="cartlist_goods_type">
+                            <div class="cartlist_goods_msg">
+                                <a class="goods_type_title"><i
+                                        class='type_icon'>
+
+                                </i>{{ cart.goods.productlongname }}</a>
+                            </div>
+                            <div class="goods_types">
+                                <span class="goods_types_size"
+                                      style="color: red">
+                                    {{ cart.size }}</span>
+                                <span class="goods_types_color" style="color: red">
+                                    {{ cart.color }}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </li>
-            <li class="cartlist_info_singleprice table_data">price</li>
-            <li class="cartlist_info_number table_data">
-                <div class="info_num">
-                    <ul>
-                        <li><a>-</a></li>
-                        <li><input type="text" value="sum+a" class="cartlist_goods_num"/></li>
-                        <li><a>+</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="cartlist_info_cheap table_data">&yen;00.00</li>
-            <li class="cartlist_info_total table_data"><span>total</span></li>
-            <li class="cartlist_info_handle table_data">
-                <p><a>移入收藏夹</a></p>
-                <p><a>删除</a></p>
-            </li>
-        </ul>-->
+                </li>
+                <li class="cartlist_info_singleprice table_data">
+                    {{ cart.goods.newprice }}
+                </li>
+                <li class="cartlist_info_number table_data">
+                    <div class="info_num">
+                        <ul>
+                            <li><a>-</a></li>
+                            <li><input type="text" value="{{ cart.number }}"
+                                       class="cartlist_goods_num"/></li>
+                            <li><a>+</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="cartlist_info_cheap table_data">
+                    {{ cart.goods.oldprice }}
+                </li>
+                <li class="cartlist_info_total table_data">
+                    <span>total</span></li>
+                <li class="cartlist_info_handle table_data">
+                    <p><a>删除</a></p>
+                </li>
+
+
+        </ul>
+        {% endfor %}
+    </div>
 
     </div>
 

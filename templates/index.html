@@ -846,20 +846,22 @@
     <div class="sale_goods">
         <ul class="sale_goods_list">
 
-            {% for sale_good in sale_goods %}
+            {% for good in goods %}
                 <li>
                     <div class="sale_goods_t">
-                        <a href="{% url 'alg:goodslist' %}" target="_blank">
-                            <img src="{{ sale_good.img }}" alt="
-{{ sale_good.name }}">
+                        <a href="{% url 'alg:goodslist' good.dealerid  %}"
+                           target="_blank">
+                            <img src="{{ good.smallsrc }}"  alt="">
                         </a>
                     </div>
                     <div class="sale_goods_c">
-                        <a href="#">{{ sale_good.name }}带</a>
+                        <a href="#">{{ good.msg }}</a>
                     </div>
                     <div class="sale_goods_b">
-                        <span class="oldprice">&yen;3200.00</span>
-                        <span class="newprice">&yen;999.00</span>
+                        <span class="oldprice">&yen;
+                            {{ good.oldprice }}</span>
+                        <span class="newprice">&yen;
+                            {{ good.newprice }}</span>
                     </div>
                 </li>
             {% endfor %}

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>商品详情</title>
+    <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
     <link rel="stylesheet" type="text/css" href="
 {% static 'css/base.css' %} "/>
     <link rel="stylesheet" type="text/css"
@@ -15,10 +16,12 @@
     <script src="{% static 'js/jquery-1.12.0.js' %}"></script>
     <!--再导入cookie-->
     <script src="{% static 'js/jquery.cookie.js' %}"></script>
+
+    <script src="{% static 'js/swiper.min.js' %}"></script>
     <script src="{% static 'js/goodslist.js' %}"></script>
     <script src="{% static 'js/cart.js' %}"></script>
     <script src="{% static 'js/sidebar.js' %}"></script>
-{#    <script src="{% static 'js/jiao.js' %}"></script>#}
+    {#    <script src="{% static 'js/jiao.js' %}"></script>#}
 
 </head>
 <body>
@@ -31,7 +34,13 @@
             <div class="top_r">
                 <ul>
                     <li class="top_login">
-                        <a href="{% url 'alg:login' %}" target="_blank">登录</a>
+                        <a href="{% url 'alg:login' %}">
+                    用户：{{ user.name | default:'未登录' }}
+                        </a>
+                        {% if user %}
+                            <a href="{% url 'alg:logout' %}">退出登录</a>
+                        {% endif %}
+
                         <!--<span class="logined_user"></span>-->
 
                     </li>
@@ -754,18 +763,20 @@
                 </div>
                 <!--购无车 为空-->
                 <div class="nav_cart_list_empty">
-                    购物车中还没有商品，赶紧选购吧！<em></em></div>
+                    <em>购物车中还没有商品，赶紧选购吧！</em></div>
                 <!--购物车不为空-->
                 <div class="nav_cart_msg">
-                    <!--<div class="goods_smalllist_info">
+                    <div class="goods_smalllist_info">
                         <div class="smalllist_info">
                             <ul>
                                 <li class="info_l">
-                                    <a href='#' target="_blank"><img src="imgs/goodslist_001.JPG"/></a>
+                                    <a href='#' target="_blank"><img
+                                            src="{% static 'imgs/goodslist_001.JPG' %}"/></a>
                                 </li>
                                 <li class="info_c">
                                     <div class="info_type">
-                                        <a href='goodslist.html?' target='_blank'>
+                                        <a href='goodslist.html?'
+                                           target='_blank'>
                                             <i class='type_icon'></i>type
                                         </a>
                                     </div>
@@ -777,25 +788,27 @@
                                 <li class="info_r">
                                     <em class="price_num"><span>4577</span></em><br/>
                                     <em class="price_cheap"><span>cheap</span></em><br/>
-                                    <em class="del"><a>删除</a></em><br />
+                                    <em class="del"><a>删除</a></em><br/>
                                 </li>
                             </ul>
                         </div>
 
-                    </div>-->
+                    </div>
 
                 </div>
                 <!--结算div-->
                 <div class="calculate" style="display: none;">
-                    <!--<ul>
-                        <li class="calculate_l">商品：<span>num</span>件</li>
+                    <ul>
+                        <li class="calculate_l">商品：<span>num</span>件
+                        </li>
                         <li class="calculate_c">
-                            <span>总计：</span><i class="cul_total">total</i>
+                            <span>总计：</span><i
+                                class="cul_total">total</i>
                         </li>
                         <li class="calculate_r">
-                            <a href="cart.html">去购物车</a>
+                            <a href="{% url 'alg:cart' %}">去购物车</a>
                         </li>
-                    </ul>-->
+                    </ul>
                 </div>
 
 
@@ -817,96 +830,130 @@
     </div>
 
     <div class="goodslist_datamsg">
-        <!--左边商品图片 放大镜-->
-        <div class="datamsg_l">
-            <div class="smalltu_list">
-                <ul>
-                    <!--<li class='goodslist'><img src="img/goodslist1.JPG"/></li>-->
-                </ul>
-                <p>
-                    <i class="smalltu_list_icon1"></i>
-                    <i class="smalltu_list_icon2"></i>
-                </p>
-            </div>
-            <div class="datamsg_l_r">
-                <div class="small_img">
-                    <!--<img src="img/small_good1.JPG"/>-->
-                    <div class="smallimg_area"
-                         style="width: 106px;height: 106px;top:0px;left:0px;position: absolute;border-width: 1px;display:none;background: rgba(250, 250, 250, 0.6);"></div>
-                </div>
-                <div class="bigimg_area"
-                     style="overflow: hidden;z-index: 5000;  width:400px;height:400px;display:none;position: absolute; left:410px; top:0;">
-                    <!--<img class="bigImg" src="img/big_good1.JPG" style="position: absolute;left: 0; top: 0;"/>-->
-                </div>
-            </div>
-            <div style="clear: both;"></div>
-            <!--分享-->
-            <div class="datamsg_l_share">
-                <ul>
-                    <li>
-                        <i class="share_icon1"></i>
-                        <a href="#">正品保障</a>
-                    </li>
-                    <li><i class="share_icon2"></i>天天低价</li>
-                    <li><i class="share_icon3"></i>分享</li>
-                    <li><i class="share_icon4"></i>收藏商品</li>
-                </ul>
-            </div>
+        {% for good in goods %}
 
-        </div>
-        <!--中间 商品的类型价钱等等-->
-        <div class="datamsg_c">
-            <!--<i class="name_icon"></i><p></p>-->
+            <!--左边商品图片 放大镜-->
+            <div class="datamsg_l">
+                <div class="smalltu_list">
+                    <ul>
+                        <li class='goodslist'>
+                            <img src="{{ good.xxsrc1 }}"/>
+                            <img src="{{ good.xxsrc2 }}"/>
+                            <img src="{{ good.xxsrc3 }}"/>
+                            <img src="{{ good.xxsrc4 }}"/>
+                            <img src="{{ good.xxsrc5 }}"/>
+                        </li>
+                    </ul>
+                    <p>
+                        <i class="smalltu_list_icon1"></i>
+                        <i class="smalltu_list_icon2"></i>
+                    </p>
+                </div>
+                <div class="datamsg_l_r">
+                    <div class="small_img">
+                        <img src="{{ good.bigsrc1 }}"/>
+                        <div class="smallimg_area"
+                             style="width: 106px;height: 106px;top:0px;left:0px;position: absolute;border-width: 1px;display:none;background: rgba(250, 250, 250, 0.6);"></div>
+                    </div>
+                    <div class="bigimg_area"
+                         style="overflow: hidden;z-index: 5000;  width:400px;height:400px;display:none;position: absolute; left:410px; top:0;">
+                        <img class="bigImg"
+                             src="{{ good.bigsrc1 }}"
+                             style="position: absolute;left: 0; top: 0;"/>
+                    </div>
+                </div>
+                <div style="clear: both;"></div>
+                <!--分享-->
+                <div class="datamsg_l_share">
+                    <ul>
+                        <li>
+                            <i class="share_icon1"></i>
+                            <a href="#">正品保障</a>
+                        </li>
+                        <li><i class="share_icon2"></i>天天低价</li>
+                        <li><i class="share_icon3"></i>分享</li>
+                        <li><i class="share_icon4"></i>收藏商品</li>
+                    </ul>
+                </div>
+
+            </div>
+            <!--中间 商品的类型价钱等等-->
+            <div class="datamsg_c">
+            <i class="name_icon"></i><p></p>
             <div class="datamsg_name">
             </div>
 
             <!--红色小提示-->
             <div class="red_tips">
-                <!--<span></span>-->
+                <span></span>
             </div>
 
+            <div>
+                <p style="font-size: 20px"
+                >{{ good.productlongname }}</p>
+            </div>
             <div class="datamsg_actprice">
                 <!--活动价格-->
-                <!--<em class='actprice'>活&nbsp;动&nbsp;价：<span>¥1999.00</span><del>¥4300.00</del></em>-->
+
+                <em class='actprice'>活&nbsp;动&nbsp;价：<span>¥
+                    {{ good.newprice }}</span>
+                    <del>¥{{ good.oldprice }}</del>
+                </em>
             </div>
 
             <!--秒杀价格-->
             <div class="datamsg_skillprice">
-                <!--<em class='skillprice'>秒&nbsp;杀&nbsp;价：<span>+nowprice+</span><del>+delprice+</del></em>
-                <!-秒杀倒计时-->
-                <!--<i class="skill_icon"></i><em class="skilltime">距离秒杀结束还有&nbsp;&nbsp;<span>hour</span>时&nbsp;&nbsp;<span>min</span>分&nbsp;&nbsp;<span>second</span>秒</em>-->
+                <em class='skillprice'>秒&nbsp;杀&nbsp;价：<span>+nowprice+</span>
+                    <del>+delprice+</del>
+                </em>
+                <!--秒杀倒计时-->
+                <i class="skill_icon"></i><em class="skilltime">距离秒杀结束还有&nbsp;&nbsp;<span>hour</span>时&nbsp;&nbsp;<span>min</span>分&nbsp;&nbsp;<span>second</span>秒</em>
             </div>
 
             <!--促销信息-->
             <div class="datamsg_salemsg">
-                <!--<em class="salemsg">促销信息：<span>以优惠价1999.00购买</span></em>-->
+                <em class="salemsg">促销信息：<span>{{ good.salemsg }}</span></em>
+                <p class="salemsg">今日活动：<span>{{ good.news }}</span></p>
+
             </div>
             <div class="datamsg_attr">
                 <div class="select_color">
-                    <!--<em class="color">选择颜色：</em><span class='choose'>深蓝色<i class="sel_icon"></i></span>-->
+                    <em class="color">选择颜色：</em>
+                    <span class='choose shenlan'>深蓝色<i></i></span>
+                    <span class='choose huangse'>黄色<i ></i></span>
+                    <span class='choose lvse'>绿色<i ></i></span>
+                    <span class='choose hongse'>红色<i ></i></span>
                 </div>
                 <div class="select_size">
-                    <!--<em class="size">选择尺码：</em><span class='choose'>L<i class="sel_icon"></i></span><span>M</span><span>S</span><span>XL</span><span>XXL</span>-->
+                    <em class="size">选择尺码：</em>
+                    <span class='choose xiaoma'> L <i></i></span>
+                    <span class='choose zhongma'> M <i></i></span>
+                    <span class='choose dama'> S <i></i></span>
+                    <span class='choose jiayihao'> X L<i></i></span>
+                    <span class='choose jiadahao'>XXL<i></i></span>
                 </div>
 
             </div>
             <div class="datamsg_cart">
                 <div class="select_num">
-                    <!--<em>选择数量</em><br/>
-                    <em>剩余<i class="res_num">1</i>件</em>-->
+                    <em>选择数量</em><br/>
+                    <em>剩余<i class="res_num">{{ good.remnum }}</i>件</em>
                 </div>
                 <!--选择数量-->
                 <div class="add_num">
-                    <!--<div class="num_val">
-                        <input type="text" id="num_val" value="1" />
+                    <div class="num_val">
+                        <input type="text" id="num_val" value="1"/>
                     </div>
                     <div class="num_do">
                         <a class="add bor">+</a>
                         <a class="rem">-</a>
-                    </div>-->
+                    </div>
+                    -->
                 </div>
 
-                <div class="addToCart"><a>加入购物车</a></div>
+                <div class="addToCart"
+                     data-goodid =
+                        {{ good.id }}><p><a>加入购物车</a></p></div>
                 <div class="twoma_buy">
                     <i class="phone_icon"></i>
                     <p class="load_ke">下载移动客户端</p>
@@ -917,14 +964,17 @@
                 </div>
             </div>
             <!--没货-->
-            <div class="datamsg_tips_salenull">
-                非常抱歉您所选择的商品暂时售罄，请选择其他规格的商品！
-            </div>
-            <div class="datamsg_tips_saleoff"><img
-                    src="{% static 'img/ptxia.jpg' %}">此商品已下架
-            </div>
+            {#            <div class="datamsg_tips_salenull">#}
+            {#                非常抱歉您所选择的商品暂时售罄，请选择其他规格的商品！#}
+            {#            </div>#}
+            {#            <div class="datamsg_tips_saleoff">#}
+            {#                <img src="{% static 'img/ptxia.jpg' %}">此商品已下架#}
+            {#            </div>#}
+        {% endfor %}
 
         </div>
+
+
 
         <!--右边 商品来源地-->
         <div class="datamsg_r">
@@ -1125,8 +1175,8 @@
     <!--广告-->
     <div class="sidebar_ad_tu tab_sidebar">
         <div class="ad_tu">
-            <a href="#" target="_blank"><img
-                    src="{% static 'img/cover05.jpg' %}">
+            <a href="#" target="_blank">
+                <img src="{% static 'img/cover05.jpg' %}">
             </a></div>
         <a href="#" target="_blank">
         </a></div>
