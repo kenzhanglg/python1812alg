@@ -125,7 +125,7 @@ $(function () {
             if (response.status == -1){ // 未登录
 
                 // 设置cookie
-                $.cookie('back', 'goodslist', {expires: 3, path: '/'})
+                // $.cookie('back', 'goodslist', {expires: 3, path: '/'})
 
                 window.open('/login/', '_self')
             }else if (response.status ==1 ){

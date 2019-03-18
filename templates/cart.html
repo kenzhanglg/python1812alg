@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>购物车</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+          rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
     <link rel="stylesheet" type="text/css" href=
             "{% static 'css/base.css' %}"/>
@@ -119,7 +121,6 @@
 <!--------购物车详情---------->
 <div class="cart_msg">
     {% if not iscart %}
-
         <div class="cart_title">
             <p>购物车</p>
         </div>
@@ -137,7 +138,7 @@
         </div>
     {% endif %}
 
-<div class="cart_msg">
+<div class="cart_msg cart_msg_data">
     <div class="cartlist_table">
         <ul class="cartlist_tittle">
             <li style="width:60px;">全选</li>
@@ -148,19 +149,27 @@
             <li style="width:118px;">小计</li>
             <li style="width:118px;">操作</li>
         </ul>
-    <div>
+    </div>
+    <div class="cart_msg_a">
         {% for cart in carts %}
-        <ul class="cartlist_info table_msg">
+            <ul class="cartlist_info table_msg ">
 
+                <li class="cartlist_info_choose table_data
+                confirm-wrapper" data-cardid="{{ cart.id }}">
+                    {% if cart.isselect %}
+                        <span class="glyphicon glyphicon-ok"></span>
+                    {% else %}
+                        <span class="no"></span>
+                    {% endif %}
+                </li>
 
-                <li class="cartlist_info_choose table_data"><input
-                        type="checkbox"/></li>
                 <li class="cartlist_info_goods table_data">
 
                     <div class="order_gooods">
                         <div class="cartlist_goods_tu">
                             <a>
-                                <img src="{{ cart.goods.xxsrc1 }}" alt="">
+                                <img src="{{ cart.goods.xxsrc1 }}"
+                                     alt="">
                             </a>
                         </div>
                         <div class="cartlist_goods_type">
@@ -168,68 +177,96 @@
                                 <a class="goods_type_title"><i
                                         class='type_icon'>
 
-                                </i>{{ cart.goods.productlongname }}</a>
+                                </i>{{ cart.goods.productlongname }}
+                                </a>
                             </div>
                             <div class="goods_types">
                                 <span class="goods_types_size"
                                       style="color: red">
                                     {{ cart.size }}</span>
-                                <span class="goods_types_color" style="color: red">
+                                <span class="goods_types_color"
+                                      style="color: red">
                                     {{ cart.color }}</span>
                             </div>
                         </div>
                     </div>
                 </li>
-                <li class="cartlist_info_singleprice table_data">
+
+                <li class="cartlist_info_singleprice table_data"
+                    data-price="{{ cart.goods.newprice }}">
                     {{ cart.goods.newprice }}
                 </li>
+
                 <li class="cartlist_info_number table_data">
                     <div class="info_num">
                         <ul>
-                            <li><a>-</a></li>
-                            <li><input type="text" value="{{ cart.number }}"
-                                       class="cartlist_goods_num"/></li>
-                            <li><a>+</a></li>
+                            <span class="subnum"
+                                  data-cartid = "{{ cart.id  }}"
+                                       data-goodsid="{{ cart.goods.id }}">-</span>
+                            <span class="cartlist_goods_num"
+                                  data-number="{{ cart.number }}">
+                                        {{ cart.number }}
+                            </span>
+                            <span class="addnum"
+                                  data-goodsid="{{ cart.goods.id }}"
+                             data-cartid = "{{ cart.id  }}">+</span>
                         </ul>
                     </div>
                 </li>
-                <li class="cartlist_info_cheap table_data">
-                    {{ cart.goods.oldprice }}
+
+                <li class="cartlist_info_cheap table_data"
+                    data-oldprice="{{ cart.goods.oldprice }}">
+                    <span>活动优惠：￥</span>
+                    <b></b>
                 </li>
+
                 <li class="cartlist_info_total table_data">
-                    <span>total</span></li>
-                <li class="cartlist_info_handle table_data">
-                    <p><a>删除</a></p>
+                    <span></span>
                 </li>
 
+                <li class="cartlist_info_handle table_data" data-cartid = "{{ cart.id  }}">
+                    <a >删除</a>
+                </li>
 
-        </ul>
+            </ul>
         {% endfor %}
     </div>
 
-    </div>
 
-    <div class="goBuy">
-        <div class="goBuy_l">
-            <span><input type="checkbox" id="allchecked"
-                         checked="checked"></span>
-            <span><a>全选</a></span>
-            <span><a>删除</a></span>
-            <span><a>移入收藏夹</a></span>
+</div>
 
-        </div>
-        <div class="goBuy_r">
-            <ul>
-                <li>
-                    <div class="buy_total">总计：<span></span></div>
-                    <div class="buy_num">
-                        商品<span>0</span>件&nbsp;&nbsp;赠品0件
-                    </div>
-                </li>
-                <li><a>去结算</a></li>
-            </ul>
-        </div>
+<div class="goBuy">
+    <div class="goBuy_l">
+{#            <span>#}
+{#                <input type="checkbox" id="allchecked"#}
+{#                       checked="checked">#}
+{#            </span>#}
+        {#                    <div class=" table_data#}
+        {#                        confirm-wrapper" data-cardid="{{ cart.id }}">#}
+        {#                            {% if cart.isselect %}#}
+        {#                                    <span class="glyphicon glyphicon-ok"></span>#}
+        {#                                {% else %}#}
+        {#                                    <span class="no"></span>#}
+        {#                                {% endif %}#}
+        {#                        </div>#}
+{#        <span><a>全选</a></span>#}
+        <span class="delcartall" >删除全部商品</span>
+
     </div>
+    <div class="goBuy_r">
+        <ul>
+            <li>
+                <div class="buy_total">
+                    总计：￥
+                    <span></span>
+                </div>
+            </li>
+            <li>
+                <a>去结算</a>
+            </li>
+        </ul>
+    </div>
+</div>
 </div>
 
 <div id="cart_hotsale">

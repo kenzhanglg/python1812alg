@@ -1,3 +1,36 @@
+/*.cart_msg ul li .confirm-wrapper{*/
+    /*width: 10%;*/
+    /*line-height: 6rem;*/
+    /*text-align: center;*/
+/*}*/
+.cart_msg .no{
+    display: inline;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid grey;
+    font-size: 1rem;
+}
+.cart_msg .glyphicon-ok{
+    background: #ffd601;
+    color: white;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+}
+
+/*.cart_msg ul li .confirm-wrapper{*/
+    /*background: white;*/
+    /*padding: 0.5rem;*/
+    /*margin: 0.5rem;*/
+    /*border-radius: 0.7rem;*/
+
+    /*display: flex;*/
+    /*height: 6rem;*/
+/*}*/
+
+
 
 ul,li,a,p,span,em{
 	margin: 0;
@@ -283,11 +316,11 @@ a.goods_type_title:hover{
 .info_num ul{
     margin-left: 20px;
 }
-.info_num ul li{
+.info_num ul span{
     margin-top: 30px;
 	float: left;
 }
-.info_num ul li a{
+.info_num ul  span{
     width: 20px;
     height: 20px;
     display: block;
@@ -301,7 +334,7 @@ a.goods_type_title:hover{
     -ms-user-select: none;
     -webkit-user-select: none;
 }
-.info_num ul li a:hover{
+.info_num ul  span:hover{
 	color: #ff3344;
 	text-decoration: none;
 	cursor: pointer;

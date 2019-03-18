@@ -1,4 +1,145 @@
+$(function () {
+    total()
+    alltotal()
 
+    $(' .confirm-wrapper').click(function () {
+        var $span = $(this).find('span')
+        request_data = {
+            'cartid': $(this).attr('data-cardid')
+        }
+        $.get('/changecartselect/', request_data, function (response) {
+            console.log(response)
+            if (response.status == 1) {
+                if (response.isselect) {
+                    $span.removeClass('no').addClass('glyphicon glyphicon-ok')
+                } else {
+                    $span.removeClass('glyphicon glyphicon-ok').addClass('no')
+                }
+            }
+            alltotal()
+        })
+    })
+
+    $('.info_num .addnum').click(function () {
+        request_data = {
+            'goodsid': $(this).attr('data-goodsid'),
+            'cartid': $(this).attr('data-cartid'),
+        }
+        var $addnum = $(this)
+        var cartnumber = $(this).prev().html()
+        console.log(cartnumber)
+        $.get('/addnum/', request_data, function (response) {
+            console.log(response)
+
+            if (response.status == 1) {
+                // if ($addnum.prev().prev().html )
+                $addnum.prev().prev().show()
+                var new_cart_number = parseInt(cartnumber) + 1
+                console.log(new_cart_number)
+                $addnum.prev().html(new_cart_number)
+                total()
+                alltotal()
+
+
+            }
+        })
+    })
+
+    $('.info_num .subnum').click(function () {
+        var $that = $(this)
+
+        request_data = {
+            'goodsid': $(this).attr('data-goodsid'),
+            'cartid': $(this).attr('data-cartid'),
+        }
+        var $subnum = $(this)
+        var cartnumber = $(this).next().html()
+        console.log(cartnumber)
+        if (cartnumber < 2){
+            $subnum.hide()
+        }
+        $.get('/subnum/', request_data, function (response) {
+            console.log(response)
+
+                var new_cart_number = parseInt(cartnumber) - 1
+                console.log(new_cart_number)
+                $subnum.next().html(new_cart_number)
+                if (new_cart_number < 2){
+                    $subnum.hide()
+                }
+                total()
+                alltotal()
+
+        })
+    })
+
+    $('.cartlist_info .cartlist_info_handle').click(function () {
+        var $that = $(this)
+        request_data = {
+            'cartid': $(this).attr('data-cartid'),
+        }
+        $.get('/delcart/', request_data, function (response) {
+            console.log(response)
+            if (response.status == 1) {
+                window.open('/cart/', '_self')
+            }
+        })
+    })
+    $('.goBuy .goBuy_l .delcartall').click(function () {
+        console.log(111111111111111)
+        request_data = {
+
+        }
+
+        $.get('/delcartall/', function (response) {
+            console.log(2222222222)
+            console.log(response)
+            if (response.status == 1) {
+                window.open('/cart/', '_self')
+            }
+        })
+
+
+    })
+
+
+    function total() {
+        var sum = 0
+        // 优惠价格
+        var salesum = 0
+        $('.cartlist_info').each(function () {
+            var oldprice = $(this).find('.cartlist_info_cheap').attr('data-oldprice')
+            var price = $(this).find('.cartlist_info_singleprice').attr('data-price')
+            var num = $(this).find('.cartlist_goods_num').html()
+            sum = num * price
+            salesum = oldprice - price
+            $(this).find('.cartlist_info_total span').html(sum)
+            $(this).find('.cartlist_info_cheap b').html(salesum)
+             if (parseInt($(this).find('.cartlist_goods_num').html())<2){
+        $(this).find('.subnum').hide()
+    }
+
+        })
+    }
+
+
+    function alltotal() {
+        var sums = 0
+        $('.cartlist_info').each(function () {
+            var chose = $(this).find('.cartlist_info_choose')
+            if (chose.find('.glyphicon').length) {
+                var sum = $(this).find('.cartlist_info_total span').html()
+                sums += parseInt(sum)
+            }
+
+        })
+        $('.goBuy .buy_total span').html(sums)
+
+
+    }
+
+
+})
 // $(function(){
 // 	//点击加入购物车
 // 	//移除掉购物车中默认的空状态
@@ -286,31 +427,6 @@
 // 		})
 //
 // 	}
-//
-//
-//
-//
-// 	//===================底部热卖推荐=================
-// 	//从cart.json中获取数据
-// 	$.get("json/cart_hotsale.json",function(data){
-// 		//遍历json
-// 		for(var i=0;i<data.length;i++){
-// 			var obj=data[i];
-// 			var id=obj.id;
-// 			var src=obj.src;
-// 			var type=obj.type;
-// 			var nowprice=obj.nowprice;
-// 			var delprice=obj.delprice;
-// 			//创建 节点，将其添加到页面中
-// 			$(".cart_hotsale_content ul").append("<li><div class='cart_hotsale_tu'><a href='#' target='_blank'><img src="+src+"/></a></div><div class='cart_hotsale_type'><a href='#' target='_blank'>"+type+"</a></div><div class='cart_hotsale_price'><span>"+nowprice+"</span><del>"+delprice+"</del></div></li>")
-// 		}
-//
-//
-// 	})
-//
-// 	//==========================================
-//
-//
 //
 //
 //
