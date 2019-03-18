@@ -52,7 +52,7 @@
                         <a href="#">我的奥莱购</a>
                         <dl class="mygo_down">
                             <dd>
-                                <a href="#">我的订单</a>
+                                <a href="{% url 'alg:orderlist' %}">我的订单</a>
                             </dd>
                             <dd>
                                 <a href="#">我的收藏</a>
@@ -754,7 +754,8 @@
         <div class="nav_r_cart">
             <div class="nav_cart_tip">
                 <em class="nav_cart_icon"></em>
-                <a href="#">购物车</a>(&nbsp;<div id="nav_cart_num">0</div>&nbsp;&nbsp;)
+                <a href="{% url 'alg:cart' %}">购物车</a>(&nbsp;<div
+                    id="nav_cart_num">{{ carts_num }}</div>&nbsp;&nbsp;)
             </div>
             <div class="nav_cart_list">
                 <em class="sanjiao"></em>
@@ -1059,7 +1060,7 @@
                         <a href="{% url 'alg:cart' %}"
                            target="_blank"><p>购物车</p>
                         </a>
-                        <i class="cart_bar_num">0</i>
+                        <i class="cart_bar_num">{{ carts_num }}</i>
                     </div>
                 </li>
                 <li class="sidebar_chip">

@@ -1,11 +1,16 @@
 import hashlib
 import random
 import time
+from urllib.parse import parse_qs
 
 from django.core.cache import cache
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
-from app.models import Wheel, New_goods, User, Goods, Cart, Order
+from django.views.decorators.csrf import csrf_exempt
+
+from app.alipay import alipay
+from app.models import Wheel, New_goods, User, Goods, Cart, Order, \
+    OrderGoods
 
 
 def index(request):
@@ -24,7 +29,10 @@ def index(request):
     userid = cache.get(token)
     if userid:
         user = User.objects.get(pk=userid)
+        carts = Cart.objects.filter(user=user)
+        carts_num = carts.count()
         response_data['user'] = user
+        response_data['carts_num'] = carts_num
     return render(request,'index.html',context=response_data)
 
 
@@ -122,8 +130,11 @@ def goodslist(request,dealerid):
     if userid:
         user = User.objects.get(pk=userid)
         carts = user.cart_set.all()
+        carts_num = carts.count()
+        print(carts_num)
         response_data['carts'] = carts
         response_data['user'] = user
+        response_data['carts_num'] = carts_num
     return render(request,'goodslist.html',context=response_data)
 
 
@@ -320,32 +331,75 @@ def generateorder(request):
     token = request.session.get('token')
     userid = cache.get(token)
     user = User.objects.get(pk=userid)
-
-    # 订单
     order = Order()
     order.user = user
     order.identifier = generate_identifier()
     order.save()
 
-    # 订单商品(购物车中选中)
-    # carts = user.cart_set.filter(isselect=True)
-    # for cart in carts:
-    #     orderGoods = OrderGoods()
-    #     orderGoods.order = order
-    #     orderGoods.goods = cart.goods
-    #     orderGoods.number = cart.number
-    #     orderGoods.save()
-    #
-    #     # 购物车中移除
-    #     cart.delete()
+    carts = user.cart_set.filter(isselect=True)
+    for cart in carts:
+        orderGoods = OrderGoods()
+        orderGoods.order = order
+        orderGoods.goods = cart.goods
+        orderGoods.number = cart.number
+        orderGoods.save()
+        cart.delete()
+
+    return render(request, 'orderdetail.html',
+                  context={'order': order})
+def orderlist(request):
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+
+    orders = user.order_set.all()
+
+    return render(request, 'orderlist.html', context={'orders':orders})
+
+def orderdetail(request, identifier):
+    order = Order.objects.filter(identifier=identifier).first()
+
+    return render(request, 'orderdetail.html', context={'order': order})
+
+
+
+def returnurl(request):
+    return redirect('alg:index')
+
+
+@csrf_exempt
+def appnotifyurl(request):
+    if request.method == 'POST':
+        body_str = request.body.decode('utf-8')
+        post_data = parse_qs(body_str)
+        post_dic = {}
+        for k,v in post_data.items():
+            post_dic[k] = v[0]
+
+        out_trade_no = post_dic['out_trade_no']
+        Order.objects.filter(identifier=out_trade_no).update(status=1)
+    return JsonResponse({'msg':'success'})
+
+
+def pay(request):
+    orderid = request.GET.get('orderid')
+    order = Order.objects.get(pk=orderid)
+    sum = 0
+    for orderGoods in order.ordergoods_set.all():
+        sum += orderGoods.goods.newprice * orderGoods.number
+
+    data = alipay.direct_pay(
+        subject='MackBookPro [256G 8G 灰色]',
+        out_trade_no=order.identifier,
+        total_amount=str(sum),
+        return_url='http://39.98.84.248/returnurl/'
+    )
+    alipay_url = 'https://openapi.alipaydev.com/gateway.do?{data}'.format(data=data)
 
     response_data = {
-        'msg': '生成订单',
-        'status': 1,
-        'identifier': order.identifier
+        'msg': '调用支付接口',
+        'alipayurl': alipay_url,
+        'status': 1
     }
 
     return JsonResponse(response_data)
-
-    # return render(request, 'order/orderdetail.html',
-    #               context={'order': order})

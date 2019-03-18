@@ -209,15 +209,6 @@ $(".classify_list_box").mouseout(function () {
 
 });
 
-//===================购物车=====================
-//	当鼠标划过购物车 标识和文字时，显示购物车小列表
-$(".nav_r_cart").hover(function () {
-    $(".nav_cart_list").show();
-}, function () {
-    $(".nav_cart_list").hide();
-
-})
-
 
 
 
