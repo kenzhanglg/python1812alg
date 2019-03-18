@@ -389,10 +389,10 @@ def pay(request):
         sum += orderGoods.goods.newprice * orderGoods.number
 
     data = alipay.direct_pay(
-        subject='MackBookPro [256G 8G 灰色]',
+        subject='奥莱购 购物成功  Mar',
         out_trade_no=order.identifier,
         total_amount=str(sum),
-        return_url='http://39.98.84.248/returnurl/'
+        return_url='http://47.112.107.146/returnurl/'
     )
     alipay_url = 'https://openapi.alipaydev.com/gateway.do?{data}'.format(data=data)
 

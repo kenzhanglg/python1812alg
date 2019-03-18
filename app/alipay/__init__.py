@@ -1,3 +1,4 @@
+# __init__.py文件(直接拷贝)
 import os
 from datetime import datetime
 from Crypto.PublicKey import RSA
@@ -118,23 +119,23 @@ class AliPay(object):
         unsigned_items = self.ordered_data(data)
         message = "&".join(u"{}={}".format(k, v) for k, v in unsigned_items)
         return self._verify(message, signature)
-
-
 # 初始化操作
 # 设置秘钥公钥的存放路径
-app_private_key_path = os.path.join(BASE_DIR, 'app/alipay/APP_PRIVATE_KEY.txt')
-alipay_public_key_path = os.path.join(BASE_DIR, 'app/alipay/ALIPAY_PUBLIC_KEY.txt')
-
+app_private_key_path = os.path.join(BASE_DIR,
+                                    'app/alipay/APP_PRIVATE_KEY.txt')
+alipay_public_key_path = os.path.join(BASE_DIR,
+                                      'app/alipay/ALIPAY_PUBLIC_KEY.txt')
 # 根据自己申请的进行设置
-# app_notify_url: 服务器，支付完成后给服务器的通知，会传递支付订单相关参数，根据支付宝回传的参数进行订单状态的修改 (异步操作)
-# return_url: 客户端，支付完成后客户端进行的页面跳转(同步操作)
+#app_notify_url   服务器，支付完成后，给服务器的通知，会传递参数：支付订单相关参数
+# ，根据支付富回传的参数进行订单状态的调整（异步操作）
+#return_url   给客户端，支付完成后客户端进行的页面跳转
 alipay = AliPay(
-    appid="2016091800542542",  # 设置签约的appid
-    app_notify_url="http://39.98.84.248/appnotifyurl/",
+    appid="2016092800612140",  # 设置签约的appid
+    app_notify_url="http://47.112.107.146/appnotifyurl/",
     # 异步支付通知url
     app_private_key_path=app_private_key_path,  # 设置应用私钥
     alipay_public_key_path=alipay_public_key_path,  # 支付宝的公钥，验证支付宝回传消息使用，不是你自己的公钥,
     debug=True,  # 默认False,            # 设置是否是沙箱环境，True是沙箱环境
-    return_url="http://39.98.84.248/returnurl/",   # 同步支付通知url,
+    return_url="http://47.112.107.146/returnurl/",   # 同步支付通知url,
     # 在这个页面可以展示给用户看，只有付款成功后才会跳转
 )
