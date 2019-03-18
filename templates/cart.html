@@ -154,14 +154,14 @@
         {% for cart in carts %}
             <ul class="cartlist_info table_msg ">
 
-                <li class="cartlist_info_choose table_data
+                <div class="cartlist_info_choose table_data
                 confirm-wrapper" data-cardid="{{ cart.id }}">
                     {% if cart.isselect %}
                         <span class="glyphicon glyphicon-ok"></span>
                     {% else %}
                         <span class="no"></span>
                     {% endif %}
-                </li>
+                </div>
 
                 <li class="cartlist_info_goods table_data">
 
@@ -241,16 +241,17 @@
 {#                <input type="checkbox" id="allchecked"#}
 {#                       checked="checked">#}
 {#            </span>#}
-        {#                    <div class=" table_data#}
-        {#                        confirm-wrapper" data-cardid="{{ cart.id }}">#}
-        {#                            {% if cart.isselect %}#}
-        {#                                    <span class="glyphicon glyphicon-ok"></span>#}
-        {#                                {% else %}#}
-        {#                                    <span class="no"></span>#}
-        {#                                {% endif %}#}
-        {#                        </div>#}
-{#        <span><a>全选</a></span>#}
-        <span class="delcartall" >删除全部商品</span>
+        <div class=" table_data
+            confirm-wrapper selectall" data-all="{{ isall|lower }}">
+                {% if isall %}
+                        <span class="glyphicon glyphicon-ok"></span>
+                    {% else %}
+                         <span class="no"></span>
+                    {% endif %}
+        <b>全选</b>
+            </div>
+
+        <span class="delcartall " >删除全部商品</span>
 
     </div>
     <div class="goBuy_r">
@@ -262,7 +263,7 @@
                 </div>
             </li>
             <li>
-                <a>去结算</a>
+                <a href="{% url 'alg:generateorder' %}">去结算</a>
             </li>
         </ul>
     </div>

@@ -15,10 +15,14 @@ urlpatterns = [
     url(r'^addtocart/$', views.addtocart, name='addtocart'),
 
     url(r'^changecartselect/$', views.changecartselect, name='changecartselect'),
+url(r'^changecartselectall/$', views.changecartselectall,
+    name='changecartselectall'),
 
     url(r'^addnum/$', views.addnum,name='addnum'),
     url(r'^subnum/$', views.subnum,name='subnum'),
     url(r'^delcart/$', views.delcart, name='delcart'),
     url(r'^delcartall/$', views.delcartall, name='delcartall'),
+
+    url(r'^generateorder/$', views.generateorder, name='generateorder'),
 
 ]

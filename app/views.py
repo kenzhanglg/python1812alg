@@ -5,7 +5,7 @@ import time
 from django.core.cache import cache
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
-from app.models import Wheel,New_goods, User, Goods, Cart
+from app.models import Wheel, New_goods, User, Goods, Cart, Order
 
 
 def index(request):
@@ -145,7 +145,12 @@ def cart(request):
             iscart = True
         else:
             iscart = False
+        isall = True
+        for cart in carts:
+            if not cart.isselect:
+                isall = False
         response_data['iscart'] = iscart
+        response_data['isall'] = isall
 
     return render(request,'cart.html',context=response_data)
 
@@ -281,3 +286,66 @@ def delcartall(request):
     }
 
     return JsonResponse(response_data)
+
+
+def changecartselectall(request):
+        isall = request.GET.get('isall')
+        token = request.session.get('token')
+        userid = cache.get(token)
+        user = User.objects.get(pk=userid)
+        carts = user.cart_set.all()
+
+        if isall == 'true':
+            isall = True
+        else:
+            isall = False
+
+        for cart in carts:
+            cart.isselect = isall
+            cart.save()
+
+        response_data = {
+            'msg': '全选/取消全选 成功',
+            'status': 1
+        }
+
+        return JsonResponse(response_data)
+
+def generate_identifier():
+    temp = str(time.time()) + str(random.randrange(1000,10000))
+    return temp
+
+
+def generateorder(request):
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+
+    # 订单
+    order = Order()
+    order.user = user
+    order.identifier = generate_identifier()
+    order.save()
+
+    # 订单商品(购物车中选中)
+    # carts = user.cart_set.filter(isselect=True)
+    # for cart in carts:
+    #     orderGoods = OrderGoods()
+    #     orderGoods.order = order
+    #     orderGoods.goods = cart.goods
+    #     orderGoods.number = cart.number
+    #     orderGoods.save()
+    #
+    #     # 购物车中移除
+    #     cart.delete()
+
+    response_data = {
+        'msg': '生成订单',
+        'status': 1,
+        'identifier': order.identifier
+    }
+
+    return JsonResponse(response_data)
+
+    # return render(request, 'order/orderdetail.html',
+    #               context={'order': order})

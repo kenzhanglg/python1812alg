@@ -4,7 +4,7 @@
     /*text-align: center;*/
 /*}*/
 .cart_msg .no{
-    display: inline;
+    display: inline-block;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -17,7 +17,7 @@
     border-radius: 50%;
     width: 2rem;
     height: 2rem;
-    font-size: 1rem;
+    font-size: 2rem;
 }
 
 /*.cart_msg ul li .confirm-wrapper{*/
