@@ -55,20 +55,19 @@ $(function () {
         var $subnum = $(this)
         var cartnumber = $(this).next().html()
         console.log(cartnumber)
-        if (cartnumber < 2){
+        if (cartnumber < 2) {
             $subnum.hide()
         }
         $.get('/subnum/', request_data, function (response) {
             console.log(response)
-
-                var new_cart_number = parseInt(cartnumber) - 1
-                console.log(new_cart_number)
-                $subnum.next().html(new_cart_number)
-                if (new_cart_number < 2){
-                    $subnum.hide()
-                }
-                total()
-                alltotal()
+            var new_cart_number = parseInt(cartnumber) - 1
+            console.log(new_cart_number)
+            $subnum.next().html(new_cart_number)
+            if (new_cart_number < 2) {
+                $subnum.hide()
+            }
+            total()
+            alltotal()
 
         })
     })
@@ -96,27 +95,26 @@ $(function () {
 
     })
     $('.goBuy .goBuy_l .selectall').click(function () {
-        console.log(3333333333333333)
         var isall = $(this).attr('data-all')
         $span = $(this).find('span')
         isall = (isall == 'false') ? true : false
         $(this).attr('data-all', isall)
 
-        if (isall){
+        if (isall) {
             $span.removeClass('no').addClass('glyphicon glyphicon-ok')
         } else {
             $span.removeClass('glyphicon glyphicon-ok').addClass('no')
         }
 
         request_data = {
-            'isall':isall
+            'isall': isall
         }
         $.get('/changecartselectall/', request_data, function (response) {
             console.log(response)
 
-            if (response.status == 1){
+            if (response.status == 1) {
                 $('.cartlist_info_choose').each(function () {
-                    if (isall){ // 全选
+                    if (isall) { // 全选
                         $(this).find('span').removeClass('no').addClass('glyphicon glyphicon-ok')
                         alltotal()
                     } else {    // 取消全选
@@ -143,9 +141,9 @@ $(function () {
             salesum = oldprice - price
             $(this).find('.cartlist_info_total span').html(sum)
             $(this).find('.cartlist_info_cheap b').html(salesum)
-             if (parseInt($(this).find('.cartlist_goods_num').html())<2){
-        $(this).find('.subnum').hide()
-    }
+            if (parseInt($(this).find('.cartlist_goods_num').html()) < 2) {
+                $(this).find('.subnum').hide()
+            }
 
         })
     }
@@ -164,9 +162,6 @@ $(function () {
         $('.goBuy .buy_total span').html(sums)
 
     }
-
-
-
 
 
 })

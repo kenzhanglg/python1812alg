@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 #基础类
 class BaseModel(models.Model):
     img = models.CharField(max_length=100)
@@ -8,7 +7,6 @@ class BaseModel(models.Model):
     trackid = models.CharField(max_length=20)
 
     class Meta:
-        #抽象类
         abstract = True
 
 #轮播图  模型类
