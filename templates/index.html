@@ -63,7 +63,13 @@
                         <a href="#">我的奥莱购</a>
                         <dl class="mygo_down">
                             <dd>
+                                {% if user %}
                                 <a href="{% url 'alg:orderlist' %}">我的订单</a>
+                                    {% else %}
+                                    <a href="
+{% url 'alg:login' %}">我的订单</a>
+
+                                {% endif %}
                             </dd>
                             <dd>
                                 <a href="#">我的收藏</a>

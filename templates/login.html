@@ -30,11 +30,15 @@
                 <ul>
                     <li class="top_login">
                         <a id="login-i">
-                            用户：{{ user.name | default:'未登录' }}
+
                         </a>
                     </li>
+                    <li>
+
+                    </li>
                     <li class="top_register">
-                        <a href="#" target="_blank">免费注册</a>
+                        <a href="{% url 'alg:register' %}"
+                           target="_blank">免费注册</a>
                     </li>
                     <li class="top_mygo">
                         <a href="{% url 'alg:index' %}">我的奥莱购
@@ -50,7 +54,7 @@
                                 <a href="#">我的优惠卷</a>
                             </dd>
                             <dd>
-                                <a href="cart.html">我的购物车</a>
+                                <a href="{% url 'alg:cart' %}">我的购物车</a>
                             </dd>
                         </dl>
 

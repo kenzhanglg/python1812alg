@@ -47,7 +47,11 @@
                         <a href="{% url 'alg:index' %}">我的奥莱购</a>
                         <dl class="mygo_down">
                             <dd>
-                                <a href="{% url 'alg:orderlist' %}">我的订单</a>
+                                {% if user %}
+                                    <a href="{% url 'alg:orderlist' %}">我的订单</a>
+                                {% else %}
+                                    <a href="{% url 'alg:login' %}">我的订单</a>
+                                {% endif %}
                             </dd>
                             <dd>
                                 <a href="#">我的收藏</a>
@@ -201,15 +205,15 @@
                     <div class="info_num">
                         <ul>
                             <span class="subnum"
-                                  data-cartid = "{{ cart.id  }}"
-                                       data-goodsid="{{ cart.goods.id }}">-</span>
+                                  data-cartid="{{ cart.id }}"
+                                  data-goodsid="{{ cart.goods.id }}">-</span>
                             <span class="cartlist_goods_num"
                                   data-number="{{ cart.number }}">
                                         {{ cart.number }}
                             </span>
                             <span class="addnum"
                                   data-goodsid="{{ cart.goods.id }}"
-                             data-cartid = "{{ cart.id  }}">+</span>
+                                  data-cartid="{{ cart.id }}">+</span>
                         </ul>
                     </div>
                 </li>
@@ -224,8 +228,9 @@
                     <span></span>
                 </li>
 
-                <li class="cartlist_info_handle table_data" data-cartid = "{{ cart.id  }}">
-                    <a >删除</a>
+                <li class="cartlist_info_handle table_data"
+                    data-cartid="{{ cart.id }}">
+                    <a>删除</a>
                 </li>
 
             </ul>
@@ -237,21 +242,21 @@
 
 <div class="goBuy">
     <div class="goBuy_l">
-{#            <span>#}
-{#                <input type="checkbox" id="allchecked"#}
-{#                       checked="checked">#}
-{#            </span>#}
+        {#            <span>#}
+        {#                <input type="checkbox" id="allchecked"#}
+        {#                       checked="checked">#}
+        {#            </span>#}
         <div class=" table_data
             confirm-wrapper selectall" data-all="{{ isall|lower }}">
-                {% if isall %}
-                        <span class="glyphicon glyphicon-ok"></span>
-                    {% else %}
-                         <span class="no"></span>
-                    {% endif %}
-        <b>全选</b>
-            </div>
+            {% if isall %}
+                <span class="glyphicon glyphicon-ok"></span>
+            {% else %}
+                <span class="no"></span>
+            {% endif %}
+            <b>全选</b>
+        </div>
 
-        <span class="delcartall " >删除全部商品</span>
+        <span class="delcartall ">删除全部商品</span>
 
     </div>
     <div class="goBuy_r">
@@ -263,7 +268,11 @@
                 </div>
             </li>
             <li>
+                {% if user %}
                 <a href="{% url 'alg:generateorder' %}">去结算</a>
+                    {% else %}
+                     <a href="{% url 'alg:login' %}">去结算</a>
+                {% endif %}
             </li>
         </ul>
     </div>

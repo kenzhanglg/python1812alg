@@ -161,6 +161,8 @@ def cart(request):
                 isall = False
         response_data['iscart'] = iscart
         response_data['isall'] = isall
+    else:
+        response_data['user'] = None
 
     return render(request,'cart.html',context=response_data)
 
