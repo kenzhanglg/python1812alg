@@ -1,5 +1,5 @@
 $(function () {
-    $('.cart_msg .cart_msg_a #alipay').click(function () {
+    $('.cart_msg  #alipay').click(function () {
         console.log(11111111111111)
         // 发起支付请求
         request_data = {

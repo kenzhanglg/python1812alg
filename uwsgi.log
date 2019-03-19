@@ -2577,3 +2577,351 @@ app.models.DoesNotExist: User matching query does not exist.
 [pid: 29890|app: 0|req: 139/139] 47.92.35.138 () {34 vars in 499 bytes} [Tue Mar 19 03:49:14 2019] GET /orderlist/ => generated 66634 bytes in 43 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
 [pid: 29890|app: 0|req: 140/140] 47.97.216.82 () {34 vars in 509 bytes} [Tue Mar 19 03:56:13 2019] GET /goodslist/1001/ => generated 60341 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
 [pid: 29890|app: 0|req: 141/141] 42.236.10.75 () {38 vars in 628 bytes} [Tue Mar 19 03:56:52 2019] GET /register/ => generated 8294 bytes in 3 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Mar 19 12:15:33 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:54:48
+os: Linux-4.4.0-142-generic #168-Ubuntu SMP Wed Jan 16 21:00:45 UTC 2019
+nodename: iZwz920t9nsrhtcdzbg963Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/alg
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenv/alg/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/alg
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 3817
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8030 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x14d24a0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72904 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x14d24a0 pid: 29939 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 29939, cores: 1)
+[pid: 29939|app: 0|req: 1/1] 113.87.163.220 () {42 vars in 756 bytes} [Tue Mar 19 04:15:52 2019] GET / => generated 68266 bytes in 246 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /json/goodslist.json
+[pid: 29939|app: 0|req: 2/2] 113.87.163.220 () {44 vars in 754 bytes} [Tue Mar 19 04:15:52 2019] GET /json/goodslist.json => generated 5972 bytes in 7 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_new.json
+[pid: 29939|app: 0|req: 3/3] 113.110.230.113 () {44 vars in 755 bytes} [Tue Mar 19 04:15:52 2019] GET /json/brand_new.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/luxury_goods.json
+[pid: 29939|app: 0|req: 4/4] 113.110.230.113 () {44 vars in 761 bytes} [Tue Mar 19 04:15:52 2019] GET /json/luxury_goods.json => generated 5981 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_ad.json
+[pid: 29939|app: 0|req: 5/5] 113.87.163.220 () {44 vars in 752 bytes} [Tue Mar 19 04:15:52 2019] GET /json/brand_ad.json => generated 5969 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/mall.json
+[pid: 29939|app: 0|req: 6/6] 113.87.163.220 () {44 vars in 744 bytes} [Tue Mar 19 04:15:52 2019] GET /json/mall.json => generated 5957 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/overseas.json
+[pid: 29939|app: 0|req: 7/7] 113.110.230.113 () {44 vars in 753 bytes} [Tue Mar 19 04:15:52 2019] GET /json/overseas.json => generated 5969 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brandsale.json
+[pid: 29939|app: 0|req: 8/8] 113.87.163.220 () {44 vars in 754 bytes} [Tue Mar 19 04:15:52 2019] GET /json/brandsale.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/sidebar.json
+[pid: 29939|app: 0|req: 9/9] 113.110.230.113 () {44 vars in 751 bytes} [Tue Mar 19 04:15:52 2019] GET /json/sidebar.json => generated 5966 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 29939|app: 0|req: 10/10] 113.110.230.113 () {42 vars in 736 bytes} [Tue Mar 19 04:15:53 2019] GET /favicon.ico => generated 5948 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 11/11] 113.110.230.113 () {44 vars in 813 bytes} [Tue Mar 19 04:16:02 2019] GET /register/ => generated 8255 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+Not Found: /register/json/goodslist.json
+[pid: 29939|app: 0|req: 12/12] 113.110.230.113 () {44 vars in 782 bytes} [Tue Mar 19 04:16:02 2019] GET /register/json/goodslist.json => generated 5999 bytes in 7 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /register/json/brand_ad.json
+[pid: 29939|app: 0|req: 13/13] 113.110.230.113 () {44 vars in 780 bytes} [Tue Mar 19 04:16:02 2019] GET /register/json/brand_ad.json => generated 5996 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /register/json/brand_new.json
+[pid: 29939|app: 0|req: 14/14] 113.87.163.220 () {44 vars in 781 bytes} [Tue Mar 19 04:16:02 2019] GET /register/json/brand_new.json => generated 5999 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /register/json/overseas.json
+[pid: 29939|app: 0|req: 15/15] 113.110.230.113 () {44 vars in 780 bytes} [Tue Mar 19 04:16:02 2019] GET /register/json/overseas.json => generated 5996 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /register/json/luxury_goods.json
+[pid: 29939|app: 0|req: 16/16] 113.87.163.220 () {44 vars in 787 bytes} [Tue Mar 19 04:16:02 2019] GET /register/json/luxury_goods.json => generated 6008 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /register/json/mall.json
+[pid: 29939|app: 0|req: 17/17] 113.87.163.220 () {44 vars in 771 bytes} [Tue Mar 19 04:16:02 2019] GET /register/json/mall.json => generated 5984 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /register/json/brandsale.json
+[pid: 29939|app: 0|req: 18/18] 113.110.230.113 () {44 vars in 782 bytes} [Tue Mar 19 04:16:02 2019] GET /register/json/brandsale.json => generated 5999 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 19/19] 113.110.230.113 () {44 vars in 783 bytes} [Tue Mar 19 04:16:21 2019] GET /checkphone/?phone=13411111112 => generated 49 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 20/20] 113.110.230.113 () {52 vars in 1006 bytes} [Tue Mar 19 04:16:38 2019] POST /register/ => generated 0 bytes in 13 msecs (HTTP/1.1 302) 6 headers in 268 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 21/21] 113.110.230.113 () {46 vars in 879 bytes} [Tue Mar 19 04:16:38 2019] GET / => generated 68353 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /json/goodslist.json
+[pid: 29939|app: 0|req: 22/22] 113.110.230.113 () {44 vars in 799 bytes} [Tue Mar 19 04:16:38 2019] GET /json/goodslist.json => generated 5972 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_ad.json
+[pid: 29939|app: 0|req: 23/23] 113.87.163.220 () {44 vars in 796 bytes} [Tue Mar 19 04:16:38 2019] GET /json/brand_ad.json => generated 5969 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_new.json
+[pid: 29939|app: 0|req: 24/24] 113.87.163.220 () {44 vars in 798 bytes} [Tue Mar 19 04:16:38 2019] GET /json/brand_new.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/luxury_goods.json
+[pid: 29939|app: 0|req: 25/25] 113.110.230.113 () {44 vars in 805 bytes} [Tue Mar 19 04:16:38 2019] GET /json/luxury_goods.json => generated 5981 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/mall.json
+[pid: 29939|app: 0|req: 26/26] 113.87.163.220 () {44 vars in 788 bytes} [Tue Mar 19 04:16:38 2019] GET /json/mall.json => generated 5957 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/overseas.json
+[pid: 29939|app: 0|req: 27/27] 113.110.230.113 () {44 vars in 797 bytes} [Tue Mar 19 04:16:38 2019] GET /json/overseas.json => generated 5969 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brandsale.json
+[pid: 29939|app: 0|req: 28/28] 113.110.230.113 () {44 vars in 799 bytes} [Tue Mar 19 04:16:38 2019] GET /json/brandsale.json => generated 5972 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/sidebar.json
+[pid: 29939|app: 0|req: 29/29] 113.87.163.220 () {44 vars in 794 bytes} [Tue Mar 19 04:16:38 2019] GET /json/sidebar.json => generated 5966 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 30/30] 113.87.163.220 () {44 vars in 858 bytes} [Tue Mar 19 04:16:44 2019] GET /orderlist/ => generated 10954 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /orderlist/json/goodslist.json
+[pid: 29939|app: 0|req: 31/31] 113.87.163.220 () {44 vars in 828 bytes} [Tue Mar 19 04:16:44 2019] GET /orderlist/json/goodslist.json => generated 6002 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /orderlist/json/brand_new.json
+[pid: 29939|app: 0|req: 32/32] 113.110.230.113 () {44 vars in 829 bytes} [Tue Mar 19 04:16:44 2019] GET /orderlist/json/brand_new.json => generated 6002 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /orderlist/json/brand_ad.json
+[pid: 29939|app: 0|req: 33/33] 113.110.230.113 () {44 vars in 827 bytes} [Tue Mar 19 04:16:44 2019] GET /orderlist/json/brand_ad.json => generated 5999 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /orderlist/json/luxury_goods.json
+[pid: 29939|app: 0|req: 34/34] 113.87.163.220 () {44 vars in 834 bytes} [Tue Mar 19 04:16:44 2019] GET /orderlist/json/luxury_goods.json => generated 6011 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /orderlist/json/mall.json
+[pid: 29939|app: 0|req: 35/35] 113.110.230.113 () {44 vars in 819 bytes} [Tue Mar 19 04:16:44 2019] GET /orderlist/json/mall.json => generated 5987 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /orderlist/json/overseas.json
+[pid: 29939|app: 0|req: 36/36] 113.87.163.220 () {44 vars in 826 bytes} [Tue Mar 19 04:16:44 2019] GET /orderlist/json/overseas.json => generated 5999 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /orderlist/json/brandsale.json
+[pid: 29939|app: 0|req: 37/37] 113.87.163.220 () {44 vars in 828 bytes} [Tue Mar 19 04:16:44 2019] GET /orderlist/json/brandsale.json => generated 6002 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 38/38] 101.132.182.68 () {34 vars in 491 bytes} [Tue Mar 19 04:23:45 2019] GET /cart/ => generated 13436 bytes in 6 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 39/39] 107.170.202.182 () {34 vars in 377 bytes} [Tue Mar 19 04:24:05 2019] GET / => generated 68266 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 40/40] 47.101.203.29 () {34 vars in 461 bytes} [Tue Mar 19 04:41:56 2019] GET / => generated 68266 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 41/41] 47.101.205.4 () {34 vars in 460 bytes} [Tue Mar 19 05:09:46 2019] GET / => generated 68266 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 42/42] 47.101.204.153 () {34 vars in 462 bytes} [Tue Mar 19 05:13:37 2019] GET / => generated 68266 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /cache/global/img/gs.gif
+[pid: 29939|app: 0|req: 43/43] 80.82.70.187 () {32 vars in 414 bytes} [Tue Mar 19 05:19:00 2019] GET /cache/global/img/gs.gif => generated 5983 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 44/44] 47.92.54.139 () {34 vars in 460 bytes} [Tue Mar 19 05:22:40 2019] GET / => generated 68266 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 45/45] 47.92.54.139 () {34 vars in 460 bytes} [Tue Mar 19 05:27:08 2019] GET / => generated 68266 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 46/46] 109.235.58.226 () {32 vars in 358 bytes} [Tue Mar 19 06:19:12 2019] GET / => generated 68266 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 47/47] 140.205.118.152 () {34 vars in 496 bytes} [Tue Mar 19 06:20:35 2019] POST /appnotifyurl/ => generated 18 bytes in 4 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 48/48] 113.87.163.220 () {44 vars in 2332 bytes} [Tue Mar 19 06:20:46 2019] GET /returnurl/?charset=utf-8&out_trade_no=1552976349.9610969085&method=alipay.trade.page.pay.return&total_amount=1999.00&sign=I0rMc6jdG8Ma66BVAIA3yt5oi9Z8uqRtM8RMIkF9qNdso3oMYz54hZZONB9aRGzkJ906y5eJXcYRUaNKhjrd2Li2PPZMl%2FaxYrnOPHNCg8BI5bY5ZIWlckAphi6pSQt%2Bld6eQiZKS%2B4EZmuKvdM3v5AgxFk0XsRogqoVD%2Bl9SOz2xpEvwQCtXc9mDzQsvnC0HwXMjKqvvlgPI48qRH%2FsaoP545jf%2FLK08EQFh95qr5VJQHpTbiu6xwb7X7DqxpTIrP%2Bz%2FQ4uBiEPfEYDCbdrY4hS6MzYB3%2FQptU8v9f1Xnh1fhg87MKT6t8UIOU7javaCtWms4djKKooZw68OeHtlA%3D%3D&trade_no=2019031922001445171000001003&auth_app_id=2016092800612140&version=1.0&app_id=2016092800612140&sign_type=RSA2&seller_id=2088102177580443&timestamp=2019-03-19+14%3A20%3A42 => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 123 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 49/49] 113.87.163.220 () {44 vars in 999 bytes} [Tue Mar 19 06:20:46 2019] GET / => generated 68352 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /json/goodslist.json
+[pid: 29939|app: 0|req: 50/50] 113.110.230.113 () {44 vars in 779 bytes} [Tue Mar 19 06:20:47 2019] GET /json/goodslist.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_new.json
+[pid: 29939|app: 0|req: 51/51] 113.110.230.113 () {44 vars in 779 bytes} [Tue Mar 19 06:20:47 2019] GET /json/brand_new.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_ad.json
+[pid: 29939|app: 0|req: 52/52] 113.110.230.113 () {44 vars in 777 bytes} [Tue Mar 19 06:20:47 2019] GET /json/brand_ad.json => generated 5969 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/luxury_goods.json
+[pid: 29939|app: 0|req: 53/53] 113.110.230.113 () {44 vars in 785 bytes} [Tue Mar 19 06:20:47 2019] GET /json/luxury_goods.json => generated 5981 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/mall.json
+[pid: 29939|app: 0|req: 54/54] 113.110.230.113 () {44 vars in 769 bytes} [Tue Mar 19 06:20:48 2019] GET /json/mall.json => generated 5957 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/overseas.json
+[pid: 29939|app: 0|req: 55/55] 113.110.230.113 () {44 vars in 777 bytes} [Tue Mar 19 06:20:48 2019] GET /json/overseas.json => generated 5969 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brandsale.json
+[pid: 29939|app: 0|req: 56/56] 113.110.230.113 () {44 vars in 779 bytes} [Tue Mar 19 06:20:48 2019] GET /json/brandsale.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/sidebar.json
+[pid: 29939|app: 0|req: 57/57] 113.110.230.113 () {44 vars in 775 bytes} [Tue Mar 19 06:20:48 2019] GET /json/sidebar.json => generated 5966 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 29939|app: 0|req: 58/58] 113.87.163.220 () {40 vars in 756 bytes} [Tue Mar 19 06:20:48 2019] GET /favicon.ico => generated 5948 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Invalid HTTP_HOST header: ''. The domain name provided is not valid according to RFC 1034/1035.
+[pid: 29939|app: 0|req: 59/59] 124.159.85.213 () {26 vars in 263 bytes} [Tue Mar 19 06:20:59 2019] GET / => generated 55110 bytes in 33 msecs (HTTP/1.0 400) 1 headers in 53 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 60/60] 113.87.163.220 () {46 vars in 1030 bytes} [Tue Mar 19 06:21:08 2019] GET / => generated 68352 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /json/goodslist.json
+[pid: 29939|app: 0|req: 61/61] 113.110.230.113 () {46 vars in 810 bytes} [Tue Mar 19 06:21:09 2019] GET /json/goodslist.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_new.json
+[pid: 29939|app: 0|req: 62/62] 113.110.230.113 () {46 vars in 810 bytes} [Tue Mar 19 06:21:09 2019] GET /json/brand_new.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_ad.json
+[pid: 29939|app: 0|req: 63/63] 113.110.230.113 () {46 vars in 808 bytes} [Tue Mar 19 06:21:09 2019] GET /json/brand_ad.json => generated 5969 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/luxury_goods.json
+[pid: 29939|app: 0|req: 64/64] 113.87.163.220 () {46 vars in 815 bytes} [Tue Mar 19 06:21:09 2019] GET /json/luxury_goods.json => generated 5981 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/mall.json
+[pid: 29939|app: 0|req: 65/65] 113.110.230.113 () {46 vars in 800 bytes} [Tue Mar 19 06:21:09 2019] GET /json/mall.json => generated 5957 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/overseas.json
+[pid: 29939|app: 0|req: 66/66] 113.87.163.220 () {46 vars in 807 bytes} [Tue Mar 19 06:21:09 2019] GET /json/overseas.json => generated 5969 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brandsale.json
+[pid: 29939|app: 0|req: 67/67] 113.87.163.220 () {46 vars in 809 bytes} [Tue Mar 19 06:21:09 2019] GET /json/brandsale.json => generated 5972 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/sidebar.json
+[pid: 29939|app: 0|req: 68/68] 113.87.163.220 () {46 vars in 805 bytes} [Tue Mar 19 06:21:09 2019] GET /json/sidebar.json => generated 5966 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 69/69] 113.110.230.113 () {42 vars in 770 bytes} [Tue Mar 19 06:21:25 2019] GET / => generated 68352 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /json/goodslist.json
+[pid: 29939|app: 0|req: 70/70] 113.110.230.113 () {44 vars in 779 bytes} [Tue Mar 19 06:21:26 2019] GET /json/goodslist.json => generated 5972 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_new.json
+[pid: 29939|app: 0|req: 71/71] 113.87.163.220 () {44 vars in 778 bytes} [Tue Mar 19 06:21:26 2019] GET /json/brand_new.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_ad.json
+[pid: 29939|app: 0|req: 72/72] 113.110.230.113 () {44 vars in 777 bytes} [Tue Mar 19 06:21:26 2019] GET /json/brand_ad.json => generated 5969 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/luxury_goods.json
+[pid: 29939|app: 0|req: 73/73] 113.110.230.113 () {44 vars in 785 bytes} [Tue Mar 19 06:21:26 2019] GET /json/luxury_goods.json => generated 5981 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/mall.json
+[pid: 29939|app: 0|req: 74/74] 113.110.230.113 () {44 vars in 769 bytes} [Tue Mar 19 06:21:26 2019] GET /json/mall.json => generated 5957 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brandsale.json
+[pid: 29939|app: 0|req: 75/75] 113.87.163.220 () {44 vars in 778 bytes} [Tue Mar 19 06:21:26 2019] GET /json/brandsale.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/overseas.json
+[pid: 29939|app: 0|req: 76/76] 113.110.230.113 () {44 vars in 777 bytes} [Tue Mar 19 06:21:26 2019] GET /json/overseas.json => generated 5969 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/sidebar.json
+[pid: 29939|app: 0|req: 77/77] 113.110.230.113 () {44 vars in 775 bytes} [Tue Mar 19 06:21:26 2019] GET /json/sidebar.json => generated 5966 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 78/78] 113.110.230.113 () {44 vars in 822 bytes} [Tue Mar 19 06:21:28 2019] GET /logout/ => generated 0 bytes in 12 msecs (HTTP/1.1 302) 5 headers in 208 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 79/79] 113.110.230.113 () {44 vars in 764 bytes} [Tue Mar 19 06:21:28 2019] GET / => generated 68266 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /json/goodslist.json
+[pid: 29939|app: 0|req: 80/80] 113.110.230.113 () {44 vars in 735 bytes} [Tue Mar 19 06:21:28 2019] GET /json/goodslist.json => generated 5972 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_new.json
+[pid: 29939|app: 0|req: 81/81] 113.87.163.220 () {44 vars in 734 bytes} [Tue Mar 19 06:21:28 2019] GET /json/brand_new.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_ad.json
+[pid: 29939|app: 0|req: 82/82] 113.110.230.113 () {44 vars in 733 bytes} [Tue Mar 19 06:21:28 2019] GET /json/brand_ad.json => generated 5969 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/luxury_goods.json
+[pid: 29939|app: 0|req: 83/83] 113.110.230.113 () {44 vars in 741 bytes} [Tue Mar 19 06:21:28 2019] GET /json/luxury_goods.json => generated 5981 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/mall.json
+[pid: 29939|app: 0|req: 84/84] 113.87.163.220 () {44 vars in 724 bytes} [Tue Mar 19 06:21:28 2019] GET /json/mall.json => generated 5957 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/overseas.json
+[pid: 29939|app: 0|req: 85/85] 113.110.230.113 () {44 vars in 733 bytes} [Tue Mar 19 06:21:28 2019] GET /json/overseas.json => generated 5969 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brandsale.json
+[pid: 29939|app: 0|req: 86/86] 113.110.230.113 () {44 vars in 735 bytes} [Tue Mar 19 06:21:28 2019] GET /json/brandsale.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/sidebar.json
+[pid: 29939|app: 0|req: 87/87] 113.87.163.220 () {44 vars in 730 bytes} [Tue Mar 19 06:21:28 2019] GET /json/sidebar.json => generated 5966 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 88/88] 113.87.163.220 () {44 vars in 781 bytes} [Tue Mar 19 06:21:30 2019] GET /register/ => generated 8255 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 278 bytes (1 switches on core 0)
+Not Found: /register/json/goodslist.json
+[pid: 29939|app: 0|req: 89/89] 113.110.230.113 () {44 vars in 762 bytes} [Tue Mar 19 06:21:30 2019] GET /register/json/goodslist.json => generated 5999 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /register/json/brand_new.json
+[pid: 29939|app: 0|req: 90/90] 113.110.230.113 () {44 vars in 762 bytes} [Tue Mar 19 06:21:30 2019] GET /register/json/brand_new.json => generated 5999 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /register/json/brand_ad.json
+[pid: 29939|app: 0|req: 91/91] 113.110.230.113 () {44 vars in 760 bytes} [Tue Mar 19 06:21:30 2019] GET /register/json/brand_ad.json => generated 5996 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /register/json/luxury_goods.json
+[pid: 29939|app: 0|req: 92/92] 113.87.163.220 () {44 vars in 767 bytes} [Tue Mar 19 06:21:30 2019] GET /register/json/luxury_goods.json => generated 6008 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /register/json/mall.json
+[pid: 29939|app: 0|req: 93/93] 113.110.230.113 () {44 vars in 752 bytes} [Tue Mar 19 06:21:30 2019] GET /register/json/mall.json => generated 5984 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /register/json/overseas.json
+[pid: 29939|app: 0|req: 94/94] 113.110.230.113 () {44 vars in 760 bytes} [Tue Mar 19 06:21:30 2019] GET /register/json/overseas.json => generated 5996 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /register/json/brandsale.json
+[pid: 29939|app: 0|req: 95/95] 113.87.163.220 () {44 vars in 761 bytes} [Tue Mar 19 06:21:30 2019] GET /register/json/brandsale.json => generated 5999 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 96/96] 113.110.230.113 () {44 vars in 763 bytes} [Tue Mar 19 06:21:50 2019] GET /checkphone/?phone=13199999999 => generated 49 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 97/97] 113.110.230.113 () {48 vars in 908 bytes} [Tue Mar 19 06:22:00 2019] POST /register/ => generated 0 bytes in 10 msecs (HTTP/1.1 302) 6 headers in 268 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 98/98] 113.110.230.113 () {44 vars in 817 bytes} [Tue Mar 19 06:22:00 2019] GET / => generated 68352 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /json/goodslist.json
+[pid: 29939|app: 0|req: 99/99] 113.110.230.113 () {44 vars in 779 bytes} [Tue Mar 19 06:22:01 2019] GET /json/goodslist.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_new.json
+[pid: 29939|app: 0|req: 100/100] 113.110.230.113 () {44 vars in 779 bytes} [Tue Mar 19 06:22:01 2019] GET /json/brand_new.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_ad.json
+[pid: 29939|app: 0|req: 101/101] 113.87.163.220 () {44 vars in 776 bytes} [Tue Mar 19 06:22:01 2019] GET /json/brand_ad.json => generated 5969 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/luxury_goods.json
+[pid: 29939|app: 0|req: 102/102] 113.110.230.113 () {44 vars in 785 bytes} [Tue Mar 19 06:22:01 2019] GET /json/luxury_goods.json => generated 5981 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/mall.json
+[pid: 29939|app: 0|req: 103/103] 113.110.230.113 () {44 vars in 769 bytes} [Tue Mar 19 06:22:01 2019] GET /json/mall.json => generated 5957 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/overseas.json
+[pid: 29939|app: 0|req: 104/104] 113.87.163.220 () {44 vars in 776 bytes} [Tue Mar 19 06:22:01 2019] GET /json/overseas.json => generated 5969 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brandsale.json
+[pid: 29939|app: 0|req: 105/105] 113.110.230.113 () {44 vars in 779 bytes} [Tue Mar 19 06:22:01 2019] GET /json/brandsale.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/sidebar.json
+[pid: 29939|app: 0|req: 106/106] 113.87.163.220 () {44 vars in 774 bytes} [Tue Mar 19 06:22:01 2019] GET /json/sidebar.json => generated 5966 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 107/107] 113.110.230.113 () {44 vars in 838 bytes} [Tue Mar 19 06:22:07 2019] GET /goodslist/1001/ => generated 60428 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /goodslist/1001/json/sidebar.json
+[pid: 29939|app: 0|req: 108/108] 113.87.163.220 () {44 vars in 819 bytes} [Tue Mar 19 06:22:07 2019] GET /goodslist/1001/json/sidebar.json => generated 6011 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 109/109] 113.87.163.220 () {44 vars in 878 bytes} [Tue Mar 19 06:22:11 2019] GET /addtocart/?goodid=5&color=%E7%BB%BF%E8%89%B2&size=XXL&number=1 => generated 67 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 110/110] 113.87.163.220 () {44 vars in 832 bytes} [Tue Mar 19 06:22:15 2019] GET /cart/ => generated 16062 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /cart/json/goodslist.json
+[pid: 29939|app: 0|req: 111/111] 113.87.163.220 () {44 vars in 793 bytes} [Tue Mar 19 06:22:15 2019] GET /cart/json/goodslist.json => generated 5987 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/brand_new.json
+[pid: 29939|app: 0|req: 112/112] 113.110.230.113 () {44 vars in 794 bytes} [Tue Mar 19 06:22:15 2019] GET /cart/json/brand_new.json => generated 5987 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/brand_ad.json
+[pid: 29939|app: 0|req: 113/113] 113.110.230.113 () {44 vars in 792 bytes} [Tue Mar 19 06:22:15 2019] GET /cart/json/brand_ad.json => generated 5984 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/luxury_goods.json
+[pid: 29939|app: 0|req: 114/114] 113.87.163.220 () {44 vars in 799 bytes} [Tue Mar 19 06:22:15 2019] GET /cart/json/luxury_goods.json => generated 5996 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/mall.json
+[pid: 29939|app: 0|req: 115/115] 113.110.230.113 () {44 vars in 784 bytes} [Tue Mar 19 06:22:15 2019] GET /cart/json/mall.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/overseas.json
+[pid: 29939|app: 0|req: 116/116] 113.87.163.220 () {44 vars in 791 bytes} [Tue Mar 19 06:22:15 2019] GET /cart/json/overseas.json => generated 5984 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/brandsale.json
+[pid: 29939|app: 0|req: 117/117] 113.110.230.113 () {44 vars in 794 bytes} [Tue Mar 19 06:22:15 2019] GET /cart/json/brandsale.json => generated 5987 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 118/118] 113.87.163.220 () {44 vars in 840 bytes} [Tue Mar 19 06:22:17 2019] GET /generateorder/ => generated 11592 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /generateorder/json/goodslist.json
+[pid: 29939|app: 0|req: 119/119] 113.87.163.220 () {44 vars in 820 bytes} [Tue Mar 19 06:22:18 2019] GET /generateorder/json/goodslist.json => generated 6014 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/brand_new.json
+[pid: 29939|app: 0|req: 120/120] 113.87.163.220 () {44 vars in 820 bytes} [Tue Mar 19 06:22:18 2019] GET /generateorder/json/brand_new.json => generated 6014 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/brand_ad.json
+[pid: 29939|app: 0|req: 121/121] 113.87.163.220 () {44 vars in 818 bytes} [Tue Mar 19 06:22:18 2019] GET /generateorder/json/brand_ad.json => generated 6011 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/luxury_goods.json
+[pid: 29939|app: 0|req: 122/122] 113.110.230.113 () {44 vars in 827 bytes} [Tue Mar 19 06:22:18 2019] GET /generateorder/json/luxury_goods.json => generated 6023 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/mall.json
+[pid: 29939|app: 0|req: 123/123] 113.110.230.113 () {44 vars in 811 bytes} [Tue Mar 19 06:22:18 2019] GET /generateorder/json/mall.json => generated 5999 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/overseas.json
+[pid: 29939|app: 0|req: 124/124] 113.110.230.113 () {44 vars in 819 bytes} [Tue Mar 19 06:22:18 2019] GET /generateorder/json/overseas.json => generated 6011 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/brandsale.json
+[pid: 29939|app: 0|req: 125/125] 113.110.230.113 () {44 vars in 821 bytes} [Tue Mar 19 06:22:18 2019] GET /generateorder/json/brandsale.json => generated 6014 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 126/126] 113.87.163.220 () {44 vars in 837 bytes} [Tue Mar 19 06:22:23 2019] GET /goodslist/1001/ => generated 60428 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /goodslist/1001/json/sidebar.json
+[pid: 29939|app: 0|req: 127/127] 113.110.230.113 () {44 vars in 820 bytes} [Tue Mar 19 06:22:23 2019] GET /goodslist/1001/json/sidebar.json => generated 6011 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 128/128] 113.87.163.220 () {44 vars in 878 bytes} [Tue Mar 19 06:22:26 2019] GET /addtocart/?goodid=5&color=%E9%BB%84%E8%89%B2&size=XXL&number=1 => generated 67 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 129/129] 113.110.230.113 () {44 vars in 879 bytes} [Tue Mar 19 06:22:28 2019] GET /addtocart/?goodid=5&color=%E7%BA%A2%E8%89%B2&size=XXL&number=1 => generated 67 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 130/130] 113.87.163.220 () {44 vars in 832 bytes} [Tue Mar 19 06:22:30 2019] GET /cart/ => generated 19066 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /cart/json/goodslist.json
+[pid: 29939|app: 0|req: 131/131] 113.110.230.113 () {44 vars in 794 bytes} [Tue Mar 19 06:22:30 2019] GET /cart/json/goodslist.json => generated 5987 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/brand_new.json
+[pid: 29939|app: 0|req: 132/132] 113.110.230.113 () {44 vars in 794 bytes} [Tue Mar 19 06:22:30 2019] GET /cart/json/brand_new.json => generated 5987 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/brand_ad.json
+[pid: 29939|app: 0|req: 133/133] 113.110.230.113 () {44 vars in 792 bytes} [Tue Mar 19 06:22:30 2019] GET /cart/json/brand_ad.json => generated 5984 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/luxury_goods.json
+[pid: 29939|app: 0|req: 134/134] 113.87.163.220 () {44 vars in 799 bytes} [Tue Mar 19 06:22:30 2019] GET /cart/json/luxury_goods.json => generated 5996 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/mall.json
+[pid: 29939|app: 0|req: 135/135] 113.110.230.113 () {44 vars in 784 bytes} [Tue Mar 19 06:22:30 2019] GET /cart/json/mall.json => generated 5972 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/overseas.json
+[pid: 29939|app: 0|req: 136/136] 113.110.230.113 () {44 vars in 792 bytes} [Tue Mar 19 06:22:30 2019] GET /cart/json/overseas.json => generated 5984 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/brandsale.json
+[pid: 29939|app: 0|req: 137/137] 113.110.230.113 () {44 vars in 794 bytes} [Tue Mar 19 06:22:30 2019] GET /cart/json/brandsale.json => generated 5987 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 138/138] 113.110.230.113 () {44 vars in 841 bytes} [Tue Mar 19 06:22:32 2019] GET /generateorder/ => generated 12168 bytes in 37 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /generateorder/json/goodslist.json
+[pid: 29939|app: 0|req: 139/139] 113.110.230.113 () {44 vars in 821 bytes} [Tue Mar 19 06:22:32 2019] GET /generateorder/json/goodslist.json => generated 6014 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/brand_new.json
+[pid: 29939|app: 0|req: 140/140] 113.87.163.220 () {44 vars in 820 bytes} [Tue Mar 19 06:22:32 2019] GET /generateorder/json/brand_new.json => generated 6014 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/brand_ad.json
+[pid: 29939|app: 0|req: 141/141] 113.110.230.113 () {44 vars in 819 bytes} [Tue Mar 19 06:22:32 2019] GET /generateorder/json/brand_ad.json => generated 6011 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/luxury_goods.json
+[pid: 29939|app: 0|req: 142/142] 113.110.230.113 () {44 vars in 827 bytes} [Tue Mar 19 06:22:32 2019] GET /generateorder/json/luxury_goods.json => generated 6023 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/mall.json
+[pid: 29939|app: 0|req: 143/143] 113.110.230.113 () {44 vars in 811 bytes} [Tue Mar 19 06:22:32 2019] GET /generateorder/json/mall.json => generated 5999 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/overseas.json
+[pid: 29939|app: 0|req: 144/144] 113.87.163.220 () {44 vars in 818 bytes} [Tue Mar 19 06:22:32 2019] GET /generateorder/json/overseas.json => generated 6011 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/brandsale.json
+[pid: 29939|app: 0|req: 145/145] 113.110.230.113 () {44 vars in 821 bytes} [Tue Mar 19 06:22:32 2019] GET /generateorder/json/brandsale.json => generated 6014 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 146/146] 113.110.230.113 () {44 vars in 879 bytes} [Tue Mar 19 06:22:47 2019] GET /addtocart/?goodid=5&color=%E7%BB%BF%E8%89%B2&size=XXL&number=1 => generated 67 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 147/147] 113.110.230.113 () {44 vars in 879 bytes} [Tue Mar 19 06:22:50 2019] GET /addtocart/?goodid=5&color=%E7%BA%A2%E8%89%B2&size=XXL&number=1 => generated 67 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 148/148] 113.110.230.113 () {44 vars in 833 bytes} [Tue Mar 19 06:22:52 2019] GET /cart/ => generated 19066 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 29939|app: 0|req: 149/149] 113.87.163.220 () {40 vars in 756 bytes} [Tue Mar 19 06:22:52 2019] GET /favicon.ico => generated 5948 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/goodslist.json
+[pid: 29939|app: 0|req: 150/150] 113.110.230.113 () {44 vars in 794 bytes} [Tue Mar 19 06:22:52 2019] GET /cart/json/goodslist.json => generated 5987 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/brand_new.json
+[pid: 29939|app: 0|req: 151/151] 113.110.230.113 () {44 vars in 794 bytes} [Tue Mar 19 06:22:52 2019] GET /cart/json/brand_new.json => generated 5987 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/brand_ad.json
+[pid: 29939|app: 0|req: 152/152] 113.110.230.113 () {44 vars in 792 bytes} [Tue Mar 19 06:22:52 2019] GET /cart/json/brand_ad.json => generated 5984 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/luxury_goods.json
+[pid: 29939|app: 0|req: 153/153] 113.110.230.113 () {44 vars in 800 bytes} [Tue Mar 19 06:22:52 2019] GET /cart/json/luxury_goods.json => generated 5996 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/mall.json
+[pid: 29939|app: 0|req: 154/154] 113.110.230.113 () {44 vars in 784 bytes} [Tue Mar 19 06:22:52 2019] GET /cart/json/mall.json => generated 5972 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/overseas.json
+[pid: 29939|app: 0|req: 155/155] 113.110.230.113 () {44 vars in 792 bytes} [Tue Mar 19 06:22:52 2019] GET /cart/json/overseas.json => generated 5984 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /cart/json/brandsale.json
+[pid: 29939|app: 0|req: 156/156] 113.110.230.113 () {44 vars in 794 bytes} [Tue Mar 19 06:22:52 2019] GET /cart/json/brandsale.json => generated 5987 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 157/157] 113.110.230.113 () {44 vars in 799 bytes} [Tue Mar 19 06:23:00 2019] GET /addnum/?goodsid=5&cartid=54 => generated 60 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 158/158] 113.110.230.113 () {44 vars in 799 bytes} [Tue Mar 19 06:23:01 2019] GET /addnum/?goodsid=5&cartid=55 => generated 60 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 159/159] 113.110.230.113 () {44 vars in 841 bytes} [Tue Mar 19 06:23:02 2019] GET /generateorder/ => generated 12168 bytes in 112 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /generateorder/json/goodslist.json
+[pid: 29939|app: 0|req: 160/160] 113.110.230.113 () {44 vars in 821 bytes} [Tue Mar 19 06:23:03 2019] GET /generateorder/json/goodslist.json => generated 6014 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/brand_new.json
+[pid: 29939|app: 0|req: 161/161] 113.110.230.113 () {44 vars in 821 bytes} [Tue Mar 19 06:23:03 2019] GET /generateorder/json/brand_new.json => generated 6014 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/brand_ad.json
+[pid: 29939|app: 0|req: 162/162] 113.110.230.113 () {44 vars in 819 bytes} [Tue Mar 19 06:23:03 2019] GET /generateorder/json/brand_ad.json => generated 6011 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/luxury_goods.json
+[pid: 29939|app: 0|req: 163/163] 113.110.230.113 () {44 vars in 827 bytes} [Tue Mar 19 06:23:03 2019] GET /generateorder/json/luxury_goods.json => generated 6023 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/mall.json
+[pid: 29939|app: 0|req: 164/164] 113.110.230.113 () {44 vars in 811 bytes} [Tue Mar 19 06:23:03 2019] GET /generateorder/json/mall.json => generated 5999 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/overseas.json
+[pid: 29939|app: 0|req: 165/165] 113.110.230.113 () {44 vars in 819 bytes} [Tue Mar 19 06:23:03 2019] GET /generateorder/json/overseas.json => generated 6011 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /generateorder/json/brandsale.json
+[pid: 29939|app: 0|req: 166/166] 113.87.163.220 () {44 vars in 820 bytes} [Tue Mar 19 06:23:03 2019] GET /generateorder/json/brandsale.json => generated 6014 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 167/167] 140.205.118.69 () {34 vars in 494 bytes} [Tue Mar 19 06:26:38 2019] POST /appnotifyurl/ => generated 18 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 168/168] 113.110.230.113 () {44 vars in 2328 bytes} [Tue Mar 19 06:27:00 2019] GET /returnurl/?charset=utf-8&out_trade_no=1552976744.75787623235&method=alipay.trade.page.pay.return&total_amount=3998.00&sign=LoxVDhMUP81rJpqWO0IgBRgrVhtLkw%2F50ZF1iDZVEFAlSYoGwtfe8Fk1h53i8LYMHcYkYpWZgM7K%2FOAjSeYyEkBCwMC2sKxDse5iqYkmkWaprSlQzDHDgit0y8Y1%2BZgZOkLTtAgMP3Zshc1qivMUE4C0oQJhkVsPJpldsgRUNd7OuKsMb%2FbhehhOI1HM%2FRQC2sytwPJ1a2kArWuA0ZF3dXHbkJ%2Bx%2BZcTIZYQ2m030exIHehgVTEQvLiunhXwYCuL37e5udl9g38jXdXqtc0HNVtHZw9x1Gf9fpNXtIjguxfj8CYAgWO4vSdb%2BcWONJnmOD97q3ZGu%2FLB16SoA9NqkQ%3D%3D&trade_no=2019031922001445171000001004&auth_app_id=2016092800612140&version=1.0&app_id=2016092800612140&sign_type=RSA2&seller_id=2088102177580443&timestamp=2019-03-19+14%3A26%3A45 => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 123 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 169/169] 113.87.163.220 () {44 vars in 992 bytes} [Tue Mar 19 06:27:00 2019] GET / => generated 68352 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /json/goodslist.json
+[pid: 29939|app: 0|req: 170/170] 113.110.230.113 () {44 vars in 779 bytes} [Tue Mar 19 06:27:00 2019] GET /json/goodslist.json => generated 5972 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_new.json
+[pid: 29939|app: 0|req: 171/171] 113.87.163.220 () {44 vars in 778 bytes} [Tue Mar 19 06:27:00 2019] GET /json/brand_new.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brand_ad.json
+[pid: 29939|app: 0|req: 172/172] 113.87.163.220 () {44 vars in 776 bytes} [Tue Mar 19 06:27:00 2019] GET /json/brand_ad.json => generated 5969 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/luxury_goods.json
+[pid: 29939|app: 0|req: 173/173] 113.110.230.113 () {44 vars in 785 bytes} [Tue Mar 19 06:27:01 2019] GET /json/luxury_goods.json => generated 5981 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/mall.json
+[pid: 29939|app: 0|req: 174/174] 113.87.163.220 () {44 vars in 768 bytes} [Tue Mar 19 06:27:01 2019] GET /json/mall.json => generated 5957 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/overseas.json
+[pid: 29939|app: 0|req: 175/175] 113.87.163.220 () {44 vars in 776 bytes} [Tue Mar 19 06:27:01 2019] GET /json/overseas.json => generated 5969 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/brandsale.json
+[pid: 29939|app: 0|req: 176/176] 113.110.230.113 () {44 vars in 779 bytes} [Tue Mar 19 06:27:01 2019] GET /json/brandsale.json => generated 5972 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/sidebar.json
+[pid: 29939|app: 0|req: 177/177] 113.110.230.113 () {44 vars in 775 bytes} [Tue Mar 19 06:27:01 2019] GET /json/sidebar.json => generated 5966 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
