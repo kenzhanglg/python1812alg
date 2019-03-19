@@ -18,7 +18,7 @@
     <script src="{% static 'js/jquery.cookie.js' %}"></script>
     <script src="{% static 'js/swiper.min.js' %}"></script>
     <script src="{% static 'js/index.js' %}"></script>
-    <script src="{% static 'js/orderdetail.js' %}"></script>
+    <script src="{% static 'js/genrateorder.js' %}"></script>
 </head>
 
 <body>
@@ -108,20 +108,17 @@
 <!--有商品  商品清单显示-->
 
 <div class="cart_msg">
-    <div class="cartlist_tittle_l">订单详情
+    <div class="cartlist_tittle_l">订单
     </div>
+    {#    <div class="cartlist_tittle_r" style="display: none;">#}
+    {#        <img src="{% static 'img/alg-lodding.gif' %}">#}
+    {#    </div>#}
 </div>
 
 <!--------购物车详情---------->
 <div class="cart_msg">
-
-    <div class="orderdetail">
-        <p style="font-size: 20px; margin-left: 20px">
-            订单号: {{ order.identifier }}
-        </p>
-    <p style="font-size: 20px; margin-left: 20px">订单创建时间：
-        {{ order.createtime }}</p>
-                {% for ordergood in order.ordergoods_set.all %}
+    <div class="cart_msg_a">
+        {% for ordergood in order.ordergoods_set.all %}
 
             <img src="{{ ordergood.goods.smallsrc }}" alt=""
                  style="width: 100px;height: 100px">
@@ -130,18 +127,17 @@
             &nbsp;
             <i style="font-size: 20px; margin-left: 20px">x
                 {{ ordergood.number }}</i>
-            {% if order.status == 0 %}
-                <button class="btn btn-default" id="alipay"
-                        data-orderid="{{ order.id }}" style="font-size: 20px; margin-left: 20px">支付
-                </button>
-            {% elif order.status == 1 %}
-                <button class="btn btn-default" style="font-size: 20px; margin-left: 20px"> 已支付，待发货</button>
-            {% endif %}
+
+            <button class="btn btn-default" id="alipay"
+                    data-orderid="{{ order.id }}"
+                    style="font-size: 20px; margin-left: 20px">支付
+            </button>
+
 
         {% endfor %}
-
     </div>
 </div>
+
 
 <!----------footer部分----------->
 <div id="footer">
@@ -315,6 +311,7 @@
     </div>
 </div>
 
-</body>
-</html>
 
+</body>
+
+</html>

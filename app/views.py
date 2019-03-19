@@ -131,7 +131,6 @@ def goodslist(request,dealerid):
         user = User.objects.get(pk=userid)
         carts = user.cart_set.all()
         carts_num = carts.count()
-        print(carts_num)
         response_data['carts'] = carts
         response_data['user'] = user
         response_data['carts_num'] = carts_num
@@ -286,7 +285,6 @@ def delcartall(request):
     token = request.session.get('token')
     userid = cache.get(token)
     user = User.objects.get(pk=userid)
-    print(user.name)
     carts = Cart.objects.filter(user=user)
     carts.delete()
     # for cart in carts:
@@ -335,7 +333,6 @@ def generateorder(request):
     order.user = user
     order.identifier = generate_identifier()
     order.save()
-
     carts = user.cart_set.filter(isselect=True)
     for cart in carts:
         orderGoods = OrderGoods()
@@ -345,8 +342,9 @@ def generateorder(request):
         orderGoods.save()
         cart.delete()
 
-    return render(request, 'orderdetail.html',
-                  context={'order': order})
+    return render(request, 'genrateorder.html',
+                  context={'order': order,'user':user})
+
 def orderlist(request):
     token = request.session.get('token')
     userid = cache.get(token)
@@ -354,13 +352,18 @@ def orderlist(request):
 
     orders = user.order_set.all()
 
-    return render(request, 'orderlist.html', context={'orders':orders})
+    return render(request, 'orderlist.html', context={
+        'orders':orders,'user':user})
 
 def orderdetail(request, identifier):
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+
     order = Order.objects.filter(identifier=identifier).first()
 
-    return render(request, 'orderdetail.html', context={'order': order})
-
+    return render(request, 'orderdetail.html', context={'order': order,
+                                                        'user':user})
 
 
 def returnurl(request):
